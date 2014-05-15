@@ -18,11 +18,6 @@ hasil_test_fc = {
                     'a6': (6, 4),
                     'a7': (1, 2),
                     'a8': (4, 9),
-                    'a9': (3, 12),
-                    'a10': (4, 3),
-                    'a11': (8, 1),
-                    'a12': (5, 13),
-                    'a13': (3, 8),
                 }
 
 seeds = {
@@ -87,15 +82,40 @@ def generate_center_of_cluster(temp_cluster):
     
     return temp_center_of_cluster
 
-
+def check_center_of_cluster_similarity(old_center_of_cluster, new_center_of_cluster):
+    print old_center_of_cluster
+    print new_center_of_cluster
+    counter = 0
+    for new_center in new_center_of_cluster:
+        print new_center_of_cluster[new_center]['point']
+        #print old_center_of_cluster[new_center]['point']
+        print new_center_of_cluster[new_center]['point'] == old_center_of_cluster[new_center]['point']
+        """
+        if new_center_of_cluster[new_center]['point'] == old_center_of_cluster[new_center]['point']:
+            print "bejo"
+            counter += 1
+                    
+    print "counter : ", counter        
+    if counter < 2:
+        return -1
+    else:
+        return 1
+    """
+    
+    
 # bagian utama program
+old_center_of_cluster = seeds
 temp_cluster = do_cluster(hasil_test_fc, seeds)
 print "temp_cluster - 0 : ", temp_cluster
     
 for i in range(1, 11):
     temp_center_of_cluster = generate_center_of_cluster(temp_cluster)
-    print temp_center_of_cluster
-    print "\n"
+    #print temp_center_of_cluster
+    temp_check_coc = check_center_of_cluster_similarity(old_center_of_cluster, temp_center_of_cluster)
+    print "check coc : ", temp_check_coc
+    old_center_of_cluster = temp_center_of_cluster
     temp_cluster = do_cluster(hasil_test_fc, temp_center_of_cluster)
     print "temp_cluster - ",i," : ", temp_cluster
-
+    print "\n"
+    
+    
