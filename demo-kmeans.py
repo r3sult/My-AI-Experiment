@@ -7,6 +7,7 @@ buku        : Data Mining, Jiawei Han
 
 # library yang dibutuhkan untuk clustering k-means
 import math
+import collections
 
 # contoh data yang akan dicluster
 hasil_test_fc = { 
@@ -83,14 +84,15 @@ def generate_center_of_cluster(temp_cluster):
     return temp_center_of_cluster
 
 def check_center_of_cluster_similarity(old_center_of_cluster, new_center_of_cluster):
-    print old_center_of_cluster
-    print new_center_of_cluster
+    print "bejo :", collections.OrderedDict(sorted(old_center_of_cluster.items()))
+    print "ridwan :", collections.OrderedDict(sorted(new_center_of_cluster.items()))
     counter = 0
+    
+    """
     for new_center in new_center_of_cluster:
-        print new_center_of_cluster[new_center]['point']
+        #print new_center_of_cluster[new_center]['point']
         #print old_center_of_cluster[new_center]['point']
         print new_center_of_cluster[new_center]['point'] == old_center_of_cluster[new_center]['point']
-        """
         if new_center_of_cluster[new_center]['point'] == old_center_of_cluster[new_center]['point']:
             print "bejo"
             counter += 1
