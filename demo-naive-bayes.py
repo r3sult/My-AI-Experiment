@@ -100,3 +100,12 @@ p_crf_bc_n = get_x_pci('credit_ratings', 'fair', 'buy_computer', 'no', buy_compu
 print p_crf_bc_n
 print
 
+# dicari klasifikasi X = (age <= 30 , income = medium, student = yes, credit_rating = fair)
+case1_y = p_lte30_bc_y * p_icm_bc_y * p_stdy_bc_y * p_crf_bc_y 
+case1_n = p_lte30_bc_n * p_icm_bc_n * p_stdy_bc_n * p_crf_bc_n
+
+print case1_y, " --- ", case1_n
+
+# dicari P(X|Ci)*P(Ci)
+print case1_y *  p_ci_bc_y
+print case1_n *  p_ci_bc_n
