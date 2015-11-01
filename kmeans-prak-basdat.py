@@ -98,13 +98,11 @@ def check_centroid_similarity(old_centroid, new_centroid):
     return counter
 
 def print_cluster(temp_cluster):
-    print "\n====== HASIL AKHIR CLUSTER =====\n"
+    print "\n====== CLUSTER BARU =====\n"
     for item in temp_cluster:
         print item
 
 # contoh data yang akan dicluster
-cluster = 2
-
 prev_centroid = []
 new_cluster = []
 
@@ -118,12 +116,34 @@ data_cluster = [
                     {'a':100.0, 'b':78.0, 'c':80.0, 'd':78.0, 'e':100.0, 'cluster':'', 'label':"Andri"},
                     {'a':95.0, 'b':74.0, 'c':80.0, 'd':76.0, 'e':87.5, 'cluster':'', 'label':"Alifia"},
                     {'a':95.0, 'b':80.0, 'c':60.0, 'd':80.0, 'e':91.25, 'cluster':'', 'label':"Cecep"},
-                    {'a':100.0, 'b':50.0, 'c':92.0, 'd':57.0, 'e':100, 'cluster':'', 'label':"Sukendi"},
+                    {'a':100.0, 'b':76.0, 'c':78.0, 'd':62.0, 'e':87.5, 'cluster':'', 'label':"Sukendi"},
+                    {'a':100.0, 'b':50.0, 'c':92.0, 'd':57.0, 'e':100, 'cluster':'', 'label':"Deni"},
+                    {'a':95.0, 'b':74.0, 'c':88.0, 'd':50.0, 'e':81.25, 'cluster':'', 'label':"Rendi"},
+                    {'a':100.0, 'b':50.0, 'c':86.0, 'd':43.0, 'e':100, 'cluster':'', 'label':"Eko"},
+                    {'a':100.0, 'b':76.0, 'c':56.0, 'd':57.0, 'e':87.5, 'cluster':'', 'label':"Diyana"},
+                    {'a':95.0, 'b':62.0, 'c':82.0, 'd':26.0, 'e':100.0, 'cluster':'', 'label':"Fajar"},
+                    {'a':100.0, 'b':56.0, 'c':90.0, 'd':67.0, 'e':50.0, 'cluster':'', 'label':"Adit"},
+                    {'a':100.0, 'b':52.0, 'c':80.0, 'd':52.0, 'e':50.0, 'cluster':'', 'label':"Annisa"},
+                    {'a':95.0, 'b':68.0, 'c':90.0, 'd':61.0, 'e':12.5, 'cluster':'', 'label':"Ade"},
+                    {'a':95.0, 'b':62.0, 'c':90.0, 'd':73.0, 'e':0.0, 'cluster':'', 'label':"Arie"},
+                    {'a':95.0, 'b':78.0, 'c':82.0, 'd':60.0, 'e':0.0, 'cluster':'', 'label':"Jenifer"},
+                    {'a':100.0, 'b':80.0, 'c':76.0, 'd':50.0, 'e':0.0, 'cluster':'', 'label':"Elis"},
+                    {'a':100.0, 'b':58.0, 'c':90.0, 'd':54.0, 'e':0.0, 'cluster':'', 'label':"Aa"},
+                    {'a':100.0, 'b':46.0, 'c':72.0, 'd':59.0, 'e':0.0, 'cluster':'', 'label':"Dede"},
+                    {'a':100.0, 'b':100.0, 'c':90.0, 'd':50.0, 'e':70.0, 'cluster':'', 'label':"Miftah"},
+                    {'a':95.0, 'b':75.0, 'c':0.0, 'd':0.0, 'e':0.0, 'cluster':'', 'label':"Angga"},
+                    {'a':0.0, 'b':42.0, 'c':88.0, 'd':0.0, 'e':0.0, 'cluster':'', 'label':"Dhani"},
+                    {'a':0.0, 'b':70.0, 'c':0.0, 'd':49.0, 'e':0.0, 'cluster':'', 'label':"Naufal"},
+                    {'a':0.0, 'b':56.0, 'c':0.0, 'd':0.0, 'e':0.0, 'cluster':'', 'label':"Mirza"},
+                    {'a':100.0, 'b':0.0, 'c':0.0, 'd':0.0, 'e':0.0, 'cluster':'', 'label':"Imam"},
+                    {'a':0.0, 'b':34.0, 'c':0.0, 'd':0.0, 'e':0.0, 'cluster':'', 'label':"Iman"},
+                    {'a':0.0, 'b':26.0, 'c':0.0, 'd':0.0, 'e':0.0, 'cluster':'', 'label':"Karisma"},
                 ]
 
 centroid = [    
-                {'a':100.0, 'b':90.0, 'c':80.0, 'd':89.0, 'e':100.0, 'cluster':'c1', 'label':"Bachtiar"},
-                {'a':100.0, 'b':78.0, 'c':80.0, 'd':78.0, 'e':100.0, 'cluster':'c2', 'label':"Andri"},
+                {'a':100.0, 'b':94.0, 'c':100.0, 'd':75.0, 'e':100.0, 'cluster':'c1', 'label':"Riyan"},
+                {'a':100.0, 'b':56.0, 'c':90.0, 'd':67.0, 'e':50.0, 'cluster':'c2', 'label':"Adit"},
+                {'a':95.0, 'b':75.0, 'c':0.0, 'd':0.0, 'e':0.0, 'cluster':'c3', 'label':"Angga"},                 
             ]
 
 colors = ['red', 'blue', 'green', 'yellow', 'purple']
