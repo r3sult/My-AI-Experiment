@@ -5,14 +5,8 @@ deskripsi   : contoh implementasi algoritma K-Means untuk clustering data
 
 # library yang dibutuhkan untuk clustering k-means
 import math
-import collections
-import copy
-import numpy as np
-import matplotlib.pyplot as plt
-from pylab import *
 
 # fungsi - fungsi yang terlibat dalam perhitungan clustering k-means
-
 def get_euclidean_distance(point_a, point_b):
     temp = 0.0
     for attrib in cluster_attribute:
@@ -141,9 +135,10 @@ data_cluster = [
                 ]
 
 centroid = [    
-                {'a':100.0, 'b':94.0, 'c':100.0, 'd':75.0, 'e':100.0, 'cluster':'c1', 'label':"Riyan"},
-                {'a':100.0, 'b':56.0, 'c':90.0, 'd':67.0, 'e':50.0, 'cluster':'c2', 'label':"Adit"},
-                {'a':95.0, 'b':75.0, 'c':0.0, 'd':0.0, 'e':0.0, 'cluster':'c3', 'label':"Angga"},                 
+                {'a':100.0, 'b':50.0, 'c':92.0, 'd':57.0, 'e':100, 'cluster':'c2', 'label':"Deni"},
+                {'a':100.0, 'b':90.0, 'c':80.0, 'd':89.0, 'e':100.0, 'cluster':'c1', 'label':"Bachtiar"},
+                {'a':100.0, 'b':56.0, 'c':90.0, 'd':67.0, 'e':50.0, 'cluster':'c3', 'label':"Adit"},
+                {'a':95.0, 'b':75.0, 'c':0.0, 'd':0.0, 'e':0.0, 'cluster':'c4', 'label':"Angga"},                 
             ]
 
 colors = ['red', 'blue', 'green', 'yellow', 'purple']

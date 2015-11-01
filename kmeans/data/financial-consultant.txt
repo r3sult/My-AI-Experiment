@@ -1,0 +1,12 @@
+@attribute teknis,non_teknis
+@header name,teknis,non_teknis
+@data
+joni,2,10
+wilda,2,5
+puji,8,4
+lukman,5,8
+nunik,7,5
+ningsih,6,4
+jefri,1,2
+laksmi,4,9
+@end_data
