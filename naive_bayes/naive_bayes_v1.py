@@ -84,7 +84,7 @@ test_data = [
             
             ]
 
-def naive_bayes(item):
+def init_bayesian():
     len_data = len(training_data)
 
     # menghitung P(Ci)
@@ -97,9 +97,7 @@ def naive_bayes(item):
         probability_data[classy]['value'] = temp / len_data
         probability_data[classy]['length'] = temp
 
-    # print probability_data['yes']['value'] 
-    # print probability_data['no']['value'] 
-    
+def naive_bayes(item):
     # menghitung P(X | Ci)
     for classy in criteria_data[classifier]:
         for key in item:
@@ -139,5 +137,6 @@ def naive_bayes(item):
     print item
 
 # +======= MAIN PROCESS ==========
+init_bayesian()
 for i in test_data:
     naive_bayes(i)

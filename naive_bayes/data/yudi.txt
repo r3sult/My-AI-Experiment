@@ -1,0 +1,31 @@
+@classifier buy_computer
+@attribute age,income,student,credit_ratings,buy_computer
+@criteria
+age:lte30,31to40,gt40
+income:high,medium,low
+student:yes,no
+credit_ratings:fair,excellent
+buy_computer:yes,no
+@end_criteria
+@header age,income,student,credit_ratings,buy_computer
+@test_data
+lte30,medium,yes,fair,x
+gt40,medium,no,excellent,x
+31to40,high,yes,fair,x
+@end_test_data
+@data
+lte30,high,no,fair,no
+lte30,high,no,excellent,no
+31to40,high,no,fair,yes
+gt40,medium,no,fair,yes
+gt40,low,yes,fair,yes
+gt40,low,yes,excellent,no
+31to40,low,yes,excellent,yes
+lte30,medium,no,fair,no
+lte30,low,yes,fair,yes
+gt40,medium,yes,fair,yes
+lte30,medium,yes,excellent,yes
+31to40,medium,no,excellent,yes
+31to40,high,yes,fair,yes
+gt40,medium,no,excellent,no
+@end_data
