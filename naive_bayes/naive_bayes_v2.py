@@ -67,7 +67,7 @@ def naive_bayes(item):
 # ======== READ FILE PROCESS ========
 
 # membaca file yang akan dilakukan pemrosesan clustering
-files = open('data/iris.txt', 'r')
+files = open('data/zoo.txt', 'r')
 
 for line in files:
     if line.find('@classifier') == 0:
