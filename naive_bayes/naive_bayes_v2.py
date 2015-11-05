@@ -67,7 +67,7 @@ def naive_bayes(item):
 # ======== READ FILE PROCESS ========
 
 # membaca file yang akan dilakukan pemrosesan clustering
-files = open('data/zoo.txt', 'r')
+files = open('data/car_evaluation.txt', 'r')
 
 for line in files:
     if line.find('@classifier') == 0:
@@ -144,7 +144,7 @@ for line in files:
     if process_data:
         temp_training_data = line.split(',')
         temp_training = {}
-        
+        # print temp_training_data
         i = 0
         for head in headers:
             temp_training[head] = temp_training_data[i].replace('\n', '')
@@ -174,9 +174,9 @@ for line in files:
 
         test_data.append(temp_training)
 
-print "\n============= TRAINING DATA ==============="
-for dat in training_data:
-    print dat
+# print "\n============= TRAINING DATA ==============="
+# for dat in training_data:
+#     print dat
 
 print "\n============= TEST DATA ==================="
 for dat in test_data:
