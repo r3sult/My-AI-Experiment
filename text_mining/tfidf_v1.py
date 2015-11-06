@@ -115,6 +115,27 @@ text_data = [
 									kapasitas citra hasil kompresi tidak berubah. Histogram citra sangat
 									berpengaruh terhadap hasil akhir.""",
 					'processed_text':'',
+				},
+				{
+					'title':'IMPLEMENTASI METODE SUPPORT VECTOR MACHINE (SVM) DAN FUZZY ANALYTIC HIERARCHY PROCESS (FAHP) PADA SISTEM PENDUKUNG KEPUTUSAN SELEKSI PENERIMAAN STUDENT EMPLOYEE',
+					'raw_text':"""Student Employee adalah salah satu program pembelajaran dan pengembangan keilmuan untuk mahasiswa
+										yang dilakukan suatu universitas guna meningkatkan kemampuan sesuai dengan bidang atau keminatan ilmu
+										masing-masing. Tidak semua mahasiswa dapat bergabung sebagai Student Employee melainkan mahasiswa yang
+										cukup berkompeten. Seleksi terhadap mahasiswa yang dilakukan pada proses awal pelaksanaan Student Employee
+										bertujuan untuk mencari mahasiswa yang dinilai cukup berkompeten sehingga diharapkan nantinya mampu bekerja
+										sesuai dengan harapan. Badan Pengembangan Teknologi dan Ilmu Komputer (BPTIK) dibawah naungan Program
+										Teknologi Informasi dan Ilmu Komputer Universitas Brawijaya memiliki 4 tahapan seleksi penerimaan untuk
+										menyaring mahasiswa yang dinilai cocok bergabung sebagai Student Employee. Adapun keempat tahapan tersebut
+										secara berurutan yaitu tahap administrasi, tahap psikotes, tahap tes kemampaun, dan tahap wawancara. Beberapa
+										tahapan dilakukan dengan cara yang bersifat subjektif dan manual sehingga resiko tingkat kesalahan pada
+										perhitungan akhir (human error) sangatlah besar. Untuk itu dibutuhkan suatu sistem yang mampu meminimalkan
+										subjektifitas penilaian dan mengurangi tingkat kesalahan pada perhitungan akhir pada seleksi penerimaan Student
+										Employee BPTIK. Pada sistem tersebut menerapkan algoritma Sequential Training pada metode Support Vector
+										Machine untuk proses training pada tahap psikotes dan metode Fuzzy Analytic Hierarchy Process untuk proses
+										perangkingan berdasarkan skor akhir pada tahap tes kemampuan. Hasil dari pengujian didapatkan tingkat akurasi
+										tertinggi pada tahap psikotes sebesar 80persen dan pada tahap tes kemampuan bidang programmer sebesar 75%, bidang
+										web design sebesar 100%, bidang multimedia sebesar 100%, dan bidang network admin sebesar 75%.""",
+					'processed_text':'',
 				}
 			]
 
@@ -133,6 +154,7 @@ def initialized_docbase():
 		raw_txt = raw_txt.replace(')', '')
 		raw_txt = raw_txt.replace('.', '')
 		raw_txt = raw_txt.replace(',', '')
+		raw_txt = raw_txt.replace('_', '')
 
 		split_txt = raw_txt.split(' ')
 		temp_split_txt = split_txt
@@ -147,8 +169,8 @@ def initialized_docbase():
 				processed_txt.append(part.lower())
 
 		txt['processed_text'] = processed_txt
-		print txt['processed_text']		
-		print "\n"	
+		# print txt['processed_text']		
+		# print "\n"	
 
 		### STEMMING: Coming Soon
 		### TAGGING: Coming Soon
@@ -184,8 +206,6 @@ def tf_idf(key_word):
 			tf_idf = idf * temp_result[kw][txt['title']]['tf']
 			temp_result[kw][txt['title']].update({'tf_idf': tf_idf})	
 
-	# print temp_result
-
 	final_result = []
 	for txt in text_data:
 		total_score = 0.0
@@ -200,4 +220,4 @@ def tf_idf(key_word):
 # MAIN PROCESS
 open_stopwords()
 initialized_docbase()
-tf_idf(['algoritma','clustering', 'dokumen', 'bahasa', 'indonesia'])
+tf_idf(['clustering', 'dokumen'])

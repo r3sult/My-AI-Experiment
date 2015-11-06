@@ -143,23 +143,6 @@ def main_process (cluster_attribute, data_cluster, centroid):
 
     print_cluster(new_cluster, 'cluster', new_centroid)
 
-    # area = np.pi * ( 5 ) ** 2
-
-    # i = 0
-    # for item in new_centroid:
-    #     x_list = []
-    #     y_list = []
-    #     for data in new_cluster:
-    #         if item['cluster'] == data['cluster']:
-    #             x_list.append(data['teknis'])
-    #             y_list.append(data['non_teknis'])
-
-    #     plt.scatter(x_list, y_list, s=area, c=colors[i], alpha=1)
-
-    #     i = i + 1
-
-    # plt.show()
-
 # variabel global
 cluster_attribute = []
 data_cluster = []
