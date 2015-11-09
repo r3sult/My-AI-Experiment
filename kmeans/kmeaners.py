@@ -151,7 +151,7 @@ headers = []
 cluster = 5
 
 # membaca file yang akan dilakukan pemrosesan clustering
-files = open('data/praktikum-sisbasdat.txt', 'r')
+files = open('data/tfidf-2.txt', 'r')
 
 for line in files:
     if line.find('@attribute') == 0:

@@ -108,8 +108,6 @@ for line in files:
 
                 criteria_data[item] = temp_criteria_list
 
-
-
 for probe in probability_data:
     for criteria_list in criteria_data:
         if criteria_list != classifier:

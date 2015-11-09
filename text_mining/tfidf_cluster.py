@@ -136,6 +136,53 @@ text_data = [
 										tertinggi pada tahap psikotes sebesar 80persen dan pada tahap tes kemampuan bidang programmer sebesar 75%, bidang
 										web design sebesar 100%, bidang multimedia sebesar 100%, dan bidang network admin sebesar 75%.""",
 					'processed_text':'',
+				},
+				{
+					'title':'KLASIFIKASI DOKUMEN NASKAH DINAS MENGGUNAKAN ALGORITMA TERM FREQUENCY INVERSED DOCUMENT FREQUENCY DAN VECTOR SPACE MODE',
+					'raw_text':"""Penelitian ini bertujuan untuk merancang dan mengimplementasikan sistem klasifikasi dokumen naskah dinas
+									dengan banyak kategori sehingga dapat mempermudah dalam penyimpanan dan pencarian dokumen naskah
+									dinas. Penelitian ini menerapkan metode text mining dengan supervised learning menggunakan algoritma term
+									frequency  inverse document frequency (TFIDF) dan vector space model. Metode text mining menggunakan
+									teks di dokumen untuk menentukan kata kunci. Algoritma TFIDF melakukan pemberian bobot pada setiap kata
+									kunci disetiap kategori dan vector space model untuk mencari kemiripan kata kunci dengan kategori yang
+									tersedia. Implementasi sistem ini melakukan pembelajaran untuk mendapatkan model dari setiap kategori
+									sehingga pada saat klasifikasi menggunakan model tersebut untuk dibandingkan dengan data uji. Hasil
+									penelitian ini menunjukkan bahwa perbedaan jumlah data training mempengaruhi akurasi klasifikasi dokumen.
+									Faktor fisik dokumen dan hasil pembacaan optical character recognition (OCR) juga menjadi factor yang dapat
+									mempengaruhi akurasi klasifikasi dokumen.""",
+					'processed_text':'',
+				},
+				{
+					'title':'KOMPRESI CITRA BERWARNA MENGGUNAKAN METODE POHON BINER HUFFMAN',
+					'raw_text':"""KOMPRESI CITRA BERWARNA MENGGUNAKAN METODE POHON BINER
+									HUFFMAN. Makalah ini membahas tentang algoritma kompresi citra dengan menggunakan metode
+									pohon biner Huffman. Metode ini biasanya digunakan untuk mengkompres file teks dikembangkan
+									menjadi algoritma untuk mengkompres citra berwarna. Hasil yang diperoleh menunjukan bahwa
+									algoritma ini memiliki nilai rasio kompresi di atas satu jika jumlah warna yang terdapat dalam citra tidak
+									lebih dari 100 warna. Sedang kualitas citra hasil dekompresinya memiliki kualitas yang sama dengan citra
+									aslinya.""",
+					'processed_text':'',
+				},
+				{
+					'title':'IDENTIFIKASI SEL KANKER PROSTAT MENGGUNAKAN METODE SEGMENTASI BERDASAR UKURAN OBJEK PADA CITRA',
+					'raw_text':"""Pada saat ini, dunia ilmu kedokteran memerlukan inovasi-inovasi terautomatisasi, satu diantaranya adalah
+									pendeteksian sel kanker prostat. Pendeteksian secara manual akan memerlukan banyak waktu, terutama pendeteksian
+									yang berjarak jauh dan rumit. Oleh karena perlu dibuat program yang dapat mengidentifikasi sel kanker prostat pada
+									suatu citra secara cepat dan automatis, sehingga diperoleh analisis dan identifikasi yang akurat.
+									Analisis citra merupakan salah satu metode dalam pengolahan citra digital. Proses prapengolahan citra
+									digital dimulai dari akuisisi data citra, deteksi tepi, segmentasi dan pengambangan, hingga citra siap dianalisis.
+									Analisis citra yang dilakukan dalam hal ini adalah pendeteksian sel kanker prostat menggunakan metode segmentasi
+									sampai dengan sel kanker prostat dapat dideteksi dan dipisahkan dari latarbelakangnya. Analisis citra juga dapat untuk
+									membedakan citra sel prostat yang sakit dan yang sehat dengan menghitung jumlah pikselnya.
+									Program yang dibuat memiliki kemampuan untuk mengenali citra sehingga dapat dihitung jumlah piksel citra
+									sel prostat yang sakit dan citra sel prostat yang sehat. Dari penelitian yang dilakukan, dapat disimpulkan bahwa jumlah
+									piksel minimum untuk sel prostat sakit sebelum penebalan tepi adalah 425 piksel dan jumlah piksel maksimumnya
+									adalah 703 piksel. Sedangkan jumlah piksel minimum untuk sel prostat sakit setelah penebalan tepi adalah 497 piksel
+									dan jumlah piksel maksimumnya adalah 808 piksel. Untuk sel prostat yang sehat, jumlah piksel minimum sebelum
+									penebalan tepi adalah 778 piksel dan jumlah piksel maksimumnya adalah 2427 piksel. Sedangkan untuk sel prostat
+									sehat setelah penebalan tepi, jumlah piksel minimumnya adalah 920 piksel dan jumlah piksel maksimumnya adalah
+									2599 piksel. Toleransi untuk sel prostat sakit adalah 15,73persen dan toleransi untuk sel prostat sehat adalah 11,74persen.""",
+					'processed_text':'',
 				}
 			]
 
@@ -144,6 +191,18 @@ def open_stopwords():
 	for line in f:
 		stopwords.append(line.replace('\n', ''))
 	f.close()
+
+def get_keywords():
+	temp_keyword = []
+
+	for txt in text_data:
+		for term in  txt['processed_text']:
+			if term in temp_keyword:
+				continue
+			else:
+				temp_keyword.append(term)
+
+	return temp_keyword
 
 def initialized_docbase():
 	for txt in text_data:
@@ -169,8 +228,6 @@ def initialized_docbase():
 				processed_txt.append(part.lower())
 
 		txt['processed_text'] = processed_txt
-		# print txt['processed_text']		
-		# print "\n"	
 
 		### STEMMING: Coming Soon
 		### TAGGING: Coming Soon
@@ -205,6 +262,26 @@ def tf_idf(key_word):
 		for txt in text_data:
 			tf_idf = idf * temp_result[kw][txt['title']]['tf']
 			temp_result[kw][txt['title']].update({'tf_idf': tf_idf})	
+	
+	f = open('tfidf.txt', 'w')
+	f.write('name,')
+	for kw in key_word:
+		print "attr_", key_word.index(kw), ',',
+		temp = "attr_" + str(key_word.index(kw)) + ','
+		f.write(temp)
+	f.write("\n")
+		
+	for txt in text_data:
+		f.write(str(txt['title'].replace(' ', '_'))+',')
+		for kw in key_word:
+			temp = str(temp_result[kw][txt['title']]['tf_idf'])+','
+			f.write(temp)
+			print temp_result[kw][txt['title']]['tf_idf'],
+		
+		f.write('\n')
+		print "\n"
+		
+	f.close()
 
 	final_result = []
 	for txt in text_data:
@@ -212,7 +289,7 @@ def tf_idf(key_word):
 		for res in temp_result:
 			total_score = total_score + temp_result[res][txt['title']]['tf_idf']
 
-		final_result.append({ txt['title']:total_score, 'tf_idf': temp_result[res][txt['title']]['tf_idf'] })
+		final_result.append({ txt['title']:total_score })
 
 	for res in final_result:
 		print res
@@ -220,4 +297,6 @@ def tf_idf(key_word):
 # MAIN PROCESS
 open_stopwords()
 initialized_docbase()
-tf_idf(['clustering', 'dokumen'])
+# keywords = get_keywords()
+keywords = ['algoritma', 'fuzzy']
+tf_idf(keywords)
