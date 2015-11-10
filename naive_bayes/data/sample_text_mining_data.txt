@@ -1,0 +1,713 @@
+# criteria_data = {
+#                 'text_class': ['information_retrieval', 'artificial_intelligence', 'data_mining', 'image_processing']
+#             }
+# test_data = [
+#                 {
+#                     'title':'test-01', 
+#                     'raw_text':""" 
+#                                Seiring
+# dengan
+# perkembangan
+# Teknologi Telekomunikasi yang semakin pesat,
+# kebutuhan akan konsep dan mekanisme dalam
+# suatu call centre pada tiap-tiap provider telepon
+# sangat diperlukan. Dimana dalam suatu call
+# centre, bagian yang paling penting adalah agent
+# (operator) yang bertugas untuk menerima
+# panggilan telepon pada call centre tersebut.
+# Untuk itulah disini diperlukan suatu kinerja yang
+# baik dari seorang agent pada sebuah call center.
+# Pada proyek akhir ini akan dilakukan
+# analisa
+# kinerja
+# agent
+# terhadap
+# suatu
+# implementasi datamining clustering dengan
+# metode K-Means, yang dikombinasikan dengan
+# bahasa pemrograman Java dan database
+# MySQL. Dimana kinerja tersebut dilihat dari nilai
+# dua buah parameter performansi yakni average
+# call dan quality service.
+# Dari hasil pengujian pengelompokkan
+# (clustering) yang telah dilakukan dengan
+# perhitungan
+# berdasarkan
+# standarisasi
+# PT.Indosat,Tbk serta perhitungan menggunakan
+# metode
+# k-means dapat dikatakan bahwa
+# performansi kinerja call center agent pada
+# PT.Indosat,Tbk mengalami peningkatan.
+#                     			""", 
+#                     'processed_text':'',
+#                     'text_class':'',
+#                 },
+#             ]
+# training_data = [
+#                 {
+#                     'title':'STEMMING DOKUMEN TEKS BAHASA INDONESIA MENGGUNAKAN ALGORITMA PORTER', 
+#                     'raw_text':"""Informasi merupakan hal yang
+#                         sangat mudah didapatkan dan diakses. Tetapi
+#                         terkadang informasi yang diperoleh tidak sesuai dengan apa yang diinginkan pengguna.
+#                         Diperlukan sistem yang dapat membantu mencari informasi yang dibutuhkan secara efektif
+#                         dan efisien. Sistem informasi ini sering kali disebut dengan istilah sistem temu kembali
+#                         informasi (STKI). Pada STKI salah satu tahapan yang sangat penting adalah tahap
+#                         Stemming. Tahapan ini merupakan tahapan mentransformasikan kata dalam sebuah kalimat
+#                         atau dokumen ke kata dasarnya. Pada penelitian ini, akan dijelaskan proses Stemming pada
+#                         kalimat bahasa indonesia dengan menggunakan algortitma porter untuk mendapat root word
+#                         dari kata dalam dokumen teks. Tahapan yang ada pada algoritma porter diterjemahkan
+#                         menjadi koding program PHP. Kamus kata dasar dan stoplist disimpan di MySql. Pada
+#                         proses stemming dilakukan tidak kata perkata, akan tetapi langsung stemming pada
+#                         dokumen. Sehingga proses stemming yang dilakukan lebih cepat dan efektif.""", 
+#                     'processed_text':'',
+#                     'text_class':'information_retrieval',
+#                 },
+#                 {
+#                     'title':'HARD SUBJECT-BASED SEARCH ENGINE MENGGUNAKAN TF-IDF DAN JACCARDS COEFFICIENT',
+#                     'raw_text':"""Paper ini memperkenalkan suatu algorima search engine berdasarkan konsep HARD (High Accuracy
+#                                     Retrieval from Documents) dengan menggabungkan penggunaan metoda TF-IDF (Term Frequency Inverse
+#                                     Document Frequency) dan Jaccards Coefficient. Kedua metoda, TF-IDF dan Jaccards Coefficient
+#                                     dimodifikasi dan dikembangkan dengan memperkenalkan beberapa rumusan baru. Untuk lebih
+#                                     memudahkan dalam mengerti algoritma dan rumusan baru yang diperkenalkan, beberapa contoh
+#                                     perhitungan diberikan.""",
+#                     'processed_text':'',
+#                     'text_class':'information_retrieval',
+#                 },
+#                 {
+#                     'title':'Klasifikasi Dokumen Berita Kejadian Berbahasa Indonesia dengan Algoritma Single Pass Clustering',
+#                     'raw_text':"""Pengelompokan dokumen berita dibutuhkan untuk mempermudah pencarian informasi
+#                                     mengenai suatu event (kejadian) tertentu. Pencarian berita-berita lain yang berkaitan dengan kejadian
+#                                     tersebut tentu sulit dilakukan, bila hanya mengandalkan query biasa. Sebab pemilihan query yang
+#                                     kurang spesifik akan berakibat membanjirnya dokumen-dokumen yang tidak relevan.
+#                                     Penelitian ini berusaha untuk mengklasifikasi dokumen dengan menggunakan algoritma single
+#                                     pass clustering. Klasifikasi ini ditekankan untuk dokumen berita berbahasa Indonesia, sebab dewasa
+#                                     ini, kebutuhan konsumen di tanah air terhadap informasi semakin meningkat. Adapun keterkaitan antar
+#                                     berita ini dapat diukur berdasarkan kemiripan antar dokumen (similarity).
+#                                     Algoritma ini diuji coba dengan menggunakan sampel berita dari media massa berbasis web.
+#                                     Hasil uji coba menunjukkan bahwa algoritma ini dapat diaplikasikan untuk pengelompokan berita-
+#                                     berita berbahasa Indonesia. Pemilihan nilai threshold yang tepat akan meningkatkan kualitas
+#                                     information retrieval (temu kembali informasi) pada dokumen. Kualitas ini tercermin dari tingkat
+#                                     recall 79 persen dan precision 88 persen.""",
+#                     'processed_text':'',
+#                     'text_class':'data_mining',
+#                 },
+#                 {
+#                     'title':'PENGELOMPOKAN MAHASISWA MENGGUNAKAN ALGORITMA K-MEANS',
+#                     'raw_text':"""Makalah ini membahas pengelompokan
+#                                         mahasiswa berdasarkan data akademik menggunakan teknik
+#                                         clustering dan membuat aplikasinya kemudian menganalisis
+#                                         hasilnya sehingga diharapkan mampu memberikan informasi bagi yang berkepentingan. Algoritma K-Means
+#                                         merupakan salah satu algoritma teknik clustering yang
+#                                         dimulai dengan pemilihan secara acak K, yang merupakan
+#                                         banyaknya cluster yang ingin dibentuk dari data yang akan di
+#                                         kluster, yaitu nilai tes mahasiswa saat masuk dan Indeks
+#                                         Prestasi Komulatif mahasiswa sampai semester 8. Sistem
+#                                         yang dibuat menampilkan hasil klustering data akademik
+#                                         mahasiswa, yaitu pola dari prestasi mahasiswa yang
+#                                         klusternya tetap, turun dan naik, dan dapat terlihat dari asal
+#                                         program studi, asal kota dan asal SMA. Dari hasil studi
+#                                         kasus dapat diperoleh informasi mahasiswa yang tetap pada
+#                                         kluster seperti awal masuk sebanyak 422 (45,085 persen),
+#                                         mahasiswa yang naik kluster sebanyak 284 (30,342 persen) dan
+#                                         mahasiswa yang turun klusternya sebanyak 230 (24,573 persen),""",
+#                     'processed_text':'',
+#                     'text_class':'data_mining'
+#                 },
+#                 {
+#                     'title':'Aplikasi Fuzzy Logic Controller pada Pengontrolan Lampu Lalu Lintas',
+#                     'raw_text':"""Permasalahan kemacetan lalu lintas sudah
+#                                     menjadi masalah yang biasa di Indonesia. Salah satu upaya
+#                                     yang bisa digunakan untuk menguranginya adalah dengan
+#                                     membangun sistem pengontrolan lampu lalu lintas yang
+#                                     lebih baik dan efisien. Dengan sistem ini, kemacetan dan
+#                                     polusi dapat dikurangi. Sistem ini menggunakan fuzzy logic.
+#                                     Fuzzy logic merupakan ilmu yang sekarang sedang
+#                                     dikembangkan terutama untuk sistem pengontrol. Fuzzy
+#                                     logic mempunyai kelebihan seperti sederhana dan mampu
+#                                     diterjemahkan ke dalam bahasa manusia. Adapun fuzzy
+#                                     logic mempunyai performansi yang tidak kalah jika
+#                                     dibandingkan dengan solusi sistem yang sangat kompleks.
+#                                     Inilah yang membuat fuzzy logic digunakan daripada solusi
+#                                     sistem yang sangat kompleks. Contoh dari fuzzy logic
+#                                     controller yang telah digunakan di dunia adalah sistem
+#                                     pengontrol pendingin ruangan, sistem pengontrol kereta api
+#                                     bawah tanah Sendai di Jepang, dan sistem Animasi 3D
+#                                     MASSIVE.
+#                                     Sekarang
+#                                     banyak
+#                                     penelitian
+#                                     sedang
+#                                     dikembangkan oleh Jepang dan banyak negara lainnya yang
+#                                     matanya telah terbuka bahwa fuzzy logic mempunyai masa
+#                                     depan yang bagus. Adapun untuk membuat sistem
+#                                     pengontrol lampu lalu lintas ini, penulis menggunakan
+#                                     FIS(Fuzzy Inference System) dari perangkat lunak
+#                                     MATLAB dengan menggunakan metode Mamdani.""",
+#                     'processed_text':'',
+#                     'text_class':'artificial_intelligence',
+#                 },
+#                 {
+#                     'title':'KOMPRESI CITRA GRAY SCALE DENGAN MODIFIKASI ALGORITMA KUANTISASI',
+#                     'raw_text':"""Suatu file yang kapasitasnya besar dapat diperkecil dengan
+#                                     pemampatan (compression). Untuk file image metode kuantisasi bisa
+#                                     menjadi salah satu pilihan. Pada citra grayscale metode kuantisasi
+#                                     bekerja dengan mengurangi derajat keabuan, sehingga jumlah bit
+#                                     yang digunakan untuk merepresentasikan citra menjadi berkurang.
+#                                     Oleh karena jumlah bit berkurang maka ukuran file menjadi lebih
+#                                     kecil. Dari algoritma kuantisasi yang ada, dilakukan modifikasi pada
+#                                     saat konversi derajat keabuan lama ke derajat keabuan yang baru,
+#                                     dengan mengabaikan unsur penyebaran derajat keabuan. Hasilnya
+#                                     kapasitas citra hasil kompresi tidak berubah. Histogram citra sangat
+#                                     berpengaruh terhadap hasil akhir.""",
+#                     'processed_text':'',
+#                     'text_class':'image_processing',
+#                 },
+#                 {
+#                     'title':'IMPLEMENTASI METODE SUPPORT VECTOR MACHINE (SVM) DAN FUZZY ANALYTIC HIERARCHY PROCESS (FAHP) PADA SISTEM PENDUKUNG KEPUTUSAN SELEKSI PENERIMAAN STUDENT EMPLOYEE',
+#                     'raw_text':"""Student Employee adalah salah satu program pembelajaran dan pengembangan keilmuan untuk mahasiswa
+#                                         yang dilakukan suatu universitas guna meningkatkan kemampuan sesuai dengan bidang atau keminatan ilmu
+#                                         masing-masing. Tidak semua mahasiswa dapat bergabung sebagai Student Employee melainkan mahasiswa yang
+#                                         cukup berkompeten. Seleksi terhadap mahasiswa yang dilakukan pada proses awal pelaksanaan Student Employee
+#                                         bertujuan untuk mencari mahasiswa yang dinilai cukup berkompeten sehingga diharapkan nantinya mampu bekerja
+#                                         sesuai dengan harapan. Badan Pengembangan Teknologi dan Ilmu Komputer (BPTIK) dibawah naungan Program
+#                                         Teknologi Informasi dan Ilmu Komputer Universitas Brawijaya memiliki 4 tahapan seleksi penerimaan untuk
+#                                         menyaring mahasiswa yang dinilai cocok bergabung sebagai Student Employee. Adapun keempat tahapan tersebut
+#                                         secara berurutan yaitu tahap administrasi, tahap psikotes, tahap tes kemampaun, dan tahap wawancara. Beberapa
+#                                         tahapan dilakukan dengan cara yang bersifat subjektif dan manual sehingga resiko tingkat kesalahan pada
+#                                         perhitungan akhir (human error) sangatlah besar. Untuk itu dibutuhkan suatu sistem yang mampu meminimalkan
+#                                         subjektifitas penilaian dan mengurangi tingkat kesalahan pada perhitungan akhir pada seleksi penerimaan Student
+#                                         Employee BPTIK. Pada sistem tersebut menerapkan algoritma Sequential Training pada metode Support Vector
+#                                         Machine untuk proses training pada tahap psikotes dan metode Fuzzy Analytic Hierarchy Process untuk proses
+#                                         perangkingan berdasarkan skor akhir pada tahap tes kemampuan. Hasil dari pengujian didapatkan tingkat akurasi
+#                                         tertinggi pada tahap psikotes sebesar 80persen dan pada tahap tes kemampuan bidang programmer sebesar 75 persen, bidang
+#                                         web design sebesar 100 persen, bidang multimedia sebesar 100 persen, dan bidang network admin sebesar 75 persen.""",
+#                     'processed_text':'',
+#                     'text_class':'data_mining',
+#                 },
+#                 {
+#                     'title':'KLASIFIKASI DOKUMEN NASKAH DINAS MENGGUNAKAN ALGORITMA TERM FREQUENCY INVERSED DOCUMENT FREQUENCY DAN VECTOR SPACE MODE',
+#                     'raw_text':"""Penelitian ini bertujuan untuk merancang dan mengimplementasikan sistem klasifikasi dokumen naskah dinas
+#                                     dengan banyak kategori sehingga dapat mempermudah dalam penyimpanan dan pencarian dokumen naskah
+#                                     dinas. Penelitian ini menerapkan metode text mining dengan supervised learning menggunakan algoritma term
+#                                     frequency  inverse document frequency (TFIDF) dan vector space model. Metode text mining menggunakan
+#                                     teks di dokumen untuk menentukan kata kunci. Algoritma TFIDF melakukan pemberian bobot pada setiap kata
+#                                     kunci disetiap kategori dan vector space model untuk mencari kemiripan kata kunci dengan kategori yang
+#                                     tersedia. Implementasi sistem ini melakukan pembelajaran untuk mendapatkan model dari setiap kategori
+#                                     sehingga pada saat klasifikasi menggunakan model tersebut untuk dibandingkan dengan data uji. Hasil
+#                                     penelitian ini menunjukkan bahwa perbedaan jumlah data training mempengaruhi akurasi klasifikasi dokumen.
+#                                     Faktor fisik dokumen dan hasil pembacaan optical character recognition (OCR) juga menjadi factor yang dapat
+#                                     mempengaruhi akurasi klasifikasi dokumen.""",
+#                     'processed_text':'',
+#                     'text_class':'information_retrieval',
+#                 },
+#                 {
+#                     'title':'KOMPRESI CITRA BERWARNA MENGGUNAKAN METODE POHON BINER HUFFMAN',
+#                     'raw_text':"""KOMPRESI CITRA BERWARNA MENGGUNAKAN METODE POHON BINER
+#                                     HUFFMAN. Makalah ini membahas tentang algoritma kompresi citra dengan menggunakan metode
+#                                     pohon biner Huffman. Metode ini biasanya digunakan untuk mengkompres file teks dikembangkan
+#                                     menjadi algoritma untuk mengkompres citra berwarna. Hasil yang diperoleh menunjukan bahwa
+#                                     algoritma ini memiliki nilai rasio kompresi di atas satu jika jumlah warna yang terdapat dalam citra tidak
+#                                     lebih dari 100 warna. Sedang kualitas citra hasil dekompresinya memiliki kualitas yang sama dengan citra
+#                                     aslinya.""",
+#                     'processed_text':'',
+#                     'text_class':'image_processing',
+#                 },
+#                 {
+#                     'title':'IDENTIFIKASI SEL KANKER PROSTAT MENGGUNAKAN METODE SEGMENTASI BERDASAR UKURAN OBJEK PADA CITRA',
+#                     'raw_text':"""Pada saat ini, dunia ilmu kedokteran memerlukan inovasi-inovasi terautomatisasi, satu diantaranya adalah
+#                                     pendeteksian sel kanker prostat. Pendeteksian secara manual akan memerlukan banyak waktu, terutama pendeteksian
+#                                     yang berjarak jauh dan rumit. Oleh karena perlu dibuat program yang dapat mengidentifikasi sel kanker prostat pada
+#                                     suatu citra secara cepat dan automatis, sehingga diperoleh analisis dan identifikasi yang akurat.
+#                                     Analisis citra merupakan salah satu metode dalam pengolahan citra digital. Proses prapengolahan citra
+#                                     digital dimulai dari akuisisi data citra, deteksi tepi, segmentasi dan pengambangan, hingga citra siap dianalisis.
+#                                     Analisis citra yang dilakukan dalam hal ini adalah pendeteksian sel kanker prostat menggunakan metode segmentasi
+#                                     sampai dengan sel kanker prostat dapat dideteksi dan dipisahkan dari latarbelakangnya. Analisis citra juga dapat untuk
+#                                     membedakan citra sel prostat yang sakit dan yang sehat dengan menghitung jumlah pikselnya.
+#                                     Program yang dibuat memiliki kemampuan untuk mengenali citra sehingga dapat dihitung jumlah piksel citra
+#                                     sel prostat yang sakit dan citra sel prostat yang sehat. Dari penelitian yang dilakukan, dapat disimpulkan bahwa jumlah
+#                                     piksel minimum untuk sel prostat sakit sebelum penebalan tepi adalah 425 piksel dan jumlah piksel maksimumnya
+#                                     adalah 703 piksel. Sedangkan jumlah piksel minimum untuk sel prostat sakit setelah penebalan tepi adalah 497 piksel
+#                                     dan jumlah piksel maksimumnya adalah 808 piksel. Untuk sel prostat yang sehat, jumlah piksel minimum sebelum
+#                                     penebalan tepi adalah 778 piksel dan jumlah piksel maksimumnya adalah 2427 piksel. Sedangkan untuk sel prostat
+#                                     sehat setelah penebalan tepi, jumlah piksel minimumnya adalah 920 piksel dan jumlah piksel maksimumnya adalah
+#                                     2599 piksel. Toleransi untuk sel prostat sakit adalah 15,73persen dan toleransi untuk sel prostat sehat adalah 11,74persen.""",
+#                     'processed_text':'',
+#                     'text_class':'image_processing',
+#                 },
+#                 {
+#                 	'title':'sample-1',
+#                 	'raw_text' : """
+#                 				Penelitian ini bertujuan untuk merancang dan mengimplementasikan sistem klasifikasi dokumen naskah dinas
+# 									dengan banyak kategori sehingga dapat mempermudah dalam penyimpanan dan pencarian dokumen naskah
+# 									dinas. Penelitian ini menerapkan metode text mining dengan supervised learning menggunakan algoritma term
+# 									frequency - inverse document frequency (TF_IDF) dan vector space model. Metode text mining menggunakan
+# 									teks di dokumen untuk menentukan kata kunci. Algoritma TF_IDF melakukan pemberian bobot pada setiap kata
+# 									kunci disetiap kategori dan vector space model untuk mencari kemiripan kata kunci dengan kategori yang
+# 									tersedia. Implementasi sistem ini melakukan pembelajaran untuk mendapatkan model dari setiap kategori
+# 									sehingga pada saat klasifikasi menggunakan model tersebut untuk dibandingkan dengan data uji. Hasil
+# 									penelitian ini menunjukkan bahwa perbedaan jumlah data training mempengaruhi akurasi klasifikasi dokumen.
+# 									Faktor fisik dokumen dan hasil pembacaan optical character recognition (OCR) juga menjadi factor yang dapat
+# 									mempengaruhi akurasi klasifikasi dokumen.
+#                 				""",
+#                		'processed_text':'',
+#                		'text_class':'information_retrieval'
+#                 }
+#                 ,
+#                 {
+#                 	'title':'sample-2',
+#                 	'raw_text' : """
+#                 				Perbandingan karya ilmiah hasil penelitian dimaksudkan untuk mengetahui seberapa besar
+# 								tingkat kemiripan dari dua dokumen karya ilmiah hasil penelitian. Dokumen kueri (query) dibandingkan
+# 								dengan koleksi dokumen yang ada di database. Perbandingan dokumen dilakukan melalui tahapan
+# 								tokenising, filtering, stemming dan evaluasi/uji kemiripan. Uji kemiripan menggunakan kombinasi dua
+# 								metode yaitu TF/IDF dan BM25. Aplikasi juga dikembangkan untuk mendukung pengujian dengan
+# 								fasilitas dua bahasa (cross-language) yaitu Bahasa Indonesia dan Bahasa Inggris. Aplikasi dibuat dengan
+# 								platform web menggunakan bahasa pemrograman PHP dan database MySQL. Hasil pengujian
+# 								menunjukkan aplikasi telah berjalan sesuai yang diharapkan serta mampu membandingkan dokumen
+# 								yang isinya sama dengan keakuratan 100 persen, dokumen yang isinya sama tetapi posisi paragrafnya
+# 								dipindah dengan keakuratan 100 persen, sedangkan dokumen yang isinya berbeda ditampilkan dalam bentuk
+# 								prosentase dengan nilai kemiripan yang sebanding dengan jumlah kata (term) yang sama.
+#                 				""",
+#                		'processed_text':'',
+#                		'text_class':'information_retrieval'
+#                 }
+#                 ,
+#                 {
+#                 	'title':'sample-3',
+#                 	'raw_text' : """
+#                 					Semakin meningkatnya kemajuan Universitas Gunadarma, maka banyak
+# 									sekali pembuatan penulisan ilmiah oleh mahasiswa. Sebuah penulisan ilmiah dapat
+# 									dengan mudah dikategorikan secara manual oleh manusia, tetapi jika dilakukan
+# 									secara terkomputerisasi akan membawa permasalahan tersendiri. Begitu pula
+# 									dengan mencari tingkat kemiripan atau similaritas suatu dokumen dengan dokumen
+# 									lainnya, manusia dapat dengan mudah menentukan apakah suatu dokumen memilki
+# 									tingkat kemiripan atau similaritas dengan dokumen lainnya atau tidak, untuk itu
+# 									pada penelitian ini akan dibuat sebuah tools yang dapat mengkategorikan dokumen
+# 									dan mencari tingkat nilai similaritas antar dokumen secara terkomputerisasi.
+# 									Dalam penelitian ini teknik yang digunakan untuk memecahkan masalah
+# 									diatas adalah dengan menggunakan teknik text mining untuk pengkategorian
+# 									dokumen penulisan ilmiah. Sedangkan untuk mencari nilai similaritas suatu dokumen
+# 									dengan dokumen lainnya menggunakan kata kunci yang didapat dari hasil
+# 									pengakategorian dokumen, dan algoritma yang digunakan adalah algoritma TF/IDF
+# 									(Term Frequency  Inversed Document Frequency) dan Algoritma Vector Space
+# 									Model.
+# 									Dengan penelitian ini diharapkan proses pengkategorian dokumen secara
+# 									terkomputerisasi, hasilnya dapat sesuai dengan pengkategorian secara manual. Dan
+# 									pengukuran tingkat similaritas dokumen dapat menunjukan seberapa besar nilai
+# 									similaritas dokumen dengan dokumen lainnya.
+#                 				""",
+#                		'processed_text':'',
+#                		'text_class':'information_retrieval'
+#                 }
+#                 ,
+#                 {
+#                 	'title':'sample-4',
+#                 	'raw_text' : """
+#                 					Badan Arsip dan Perpustakaan (Arpus) Provinsi Jawa Tengah adalah salah satu lembaga pemerintah
+# 									yang berkewajiban menjaga dan melestarikan arsip statis yang berada di tingkat provinsi. Salah satu
+# 									upaya penyelamatan arsip dalam perspektif modern saat ini cenderung mengarah bagaimana
+# 									memanfaatkan teknologi informasi untuk mengelola arsip. Sistem Informasi Pengelolaan Arsip Statis
+# 									menggunakan vector space model merupakan sistem yang dapat memudahkan pengelolaan arsip
+# 									statis, mampu diakses oleh siapa saja yang membutuhkan informasi kearsipan serta memberikan
+# 									kemudahan dalam hal pencarian arsip yang relevan dengan kebutuhan pengguna sistem. Pada fungsi
+# 									pencarian arsip, sistem menggunakan metode Term Frequency-Inverse Document Frequency (TF-
+# 									IDF) untuk memberikan bobot pada setiap indeks dari kata-kata (term) dan vector space model untuk
+# 									mengukur kemiripan antara vektor dokumen dengan vektor kata kunci. Pada pengujian terdapat tiga
+# 									besaran performansi yang dihitung yaitu Recall untuk menemukan seluruh dokumen yang relevan
+# 									dalam koleksi dokumen, Precision untuk menemukan hanya dokumen yang relevan saja dalam
+# 									koleksi dan Interpolated Recall Precision untuk mengukur performansi sistem dengan
+# 									mempertimbangkan aspek keterurutan dokumen relevan. Sistem telah diuji pada 75 dokumen arsip
+# 									dengan memasukkan 10 kata kunci yang berhubungan dengan dokumen arsip. Hasil pengujian
+# 									menunjukkan nilai rata-rata recall sebesar 99 persen dan nilai rata-rata precision sebesar 36,4 persen. Untuk
+# 									nilai rata-rata interpolasi precision pada hasil penghitungan interpolasi antara recall dan precision
+# 									sebesar 90,2 persen.
+#                 				""",
+#                		'processed_text':'',
+#                		'text_class':'information_retrieval'
+#                 }
+#                 ,
+#                 {
+#                 	'title':'sample-5',
+#                 	'raw_text' : """
+#                 				Penyakit jantung merupakan salah satu masalah kesehatan Oleh karena itu penanganan untuk
+# 								diagnosa penyakit ini juga harus semakin baik.Alat yang berperan dalam mendiagnosa kelainan
+# 								jantung adalah Electrocardiograph (ECG). Hasil rekaman ECG ini digunakan untuk mengetahui
+# 								kelainan jantung yang diderita pasien. Akan tetapi tidak semua paramedis mampu membaca
+# 								rekaman ECG. Sehingga dalam penelitian ini akan dilakukan beberapa metode untuk membantu
+# 								mengenal kelainan jantung dari citra hasil rekaman ECG pasien menggunakan dekomposisi
+# 								wavelet. Data rekaman ECG yang digunakan dari lead II. Data ini diproses menggunakan
+# 								pengolahan citra dengan beberapa metode. Metode yang digunakan dalam pengolahan citra
+# 								yang pertama dengan mengkonversi citra ke blackwhite, yang kedua mengkonversi citra ke
+# 								grayscale dan yang ketiga konversi ke grayscale diteruskan dengan deteksi tepi yaitu Canny,
+# 								Robert, Prewitt dan Sobel. Kemudian semua diproses dengan dekomposisi wavelet deaubechies 2
+# 								level 4. Sehingga diperoleh 13 energi subband. Dan klasifikasi cirinya menggunakan K-Means
+# 								Clustering dengan pengukur jarak antar data menggunakan cityblock. Pengenalan ciri dari sinyal
+# 								rekaman ECG Atrial Fibrilation dan sinyal Normal dengan metode dekomposisi wavelet sudah
+# 								bekerja dengan baik. Terbukti hasil penelitian diperoleh kesimpulan bahwa akurasi pengenalan
+# 								ciri dengan menggunakan metode grayscale tanpa deteksi tepi mencapai 87 persen.
+#                 				""",
+#                		'processed_text':'',
+#                		'text_class':'image_processing'
+#                 }
+#                 ,
+#                 {
+#                 	'title':'sample-6',
+#                 	'raw_text' : """
+#                 				Kematangan buah biasanya ditentukan oleh beberapa parameter, diantaranya adalah
+# 								parameter ukuran, berat, ciri warna, keharuman dari buah tersebut, dan lain-lain. Parameter
+# 								kematangan buah dari sisi warna kulit buah merupakan salah satu faktor penting di dalam
+# 								identifikasi kematangan buah. Umumnya, klasifikasi kematangan buah dilakukan dengan cara
+# 								manual yaitu menggunakan indera penglihatan untuk membedakan kematangan buah
+# 								berdasarkan ciri warna kulit buah yang memiliki banyak kelemahan seperti penilaian oleh
+# 								manusia yang bersifat subyektif dan tidak konsisten.
+# 								Tujuan dari penelitian ini adalah untuk membuat aplikasi untuk mendeteksi buah dan
+# 								mengidentifikasi kematangannya. Aplikasi dibangun dengan menggunakan bahasa
+# 								pemrograman Delphi 7. Metode yang dipakai meliputi segmentasi K-Means clustering,
+# 								pemuaian dan penyusutan, pelabelan komponen hingga ekstraksi fitur. Pendeteksian jenis
+# 								buah dilakukan menggunakan pencocokan fitur tingkat kebulatan buah sedangkan identifikasi
+# 								kematangannya berdasarkan fitur warna dari buah. Sebelum dilakukan klasifikasi nama jenis
+# 								buah dan tingkat kematangannya, harus dilakukan pelatihan buah terlebih dahulu kemudian
+# 								dilanjutkan dengan deteksi buah dan identifikasi kematangannya.
+# 								Aplikasi yang dibuat diyakini mampu mengklasifikasikan jenis buah dan tingkat
+# 								kematangannya. Ini dibuktikan dengan pelatihan dan pengujian terhadap 3 (tiga) jenis buah
+# 								masing-masing sebanyak 30 (tiga puluh) buah sampel untuk tingkat kematangan mentah,
+# 								mengkal dan matang (total 90 buah sampel) yang menunjukkan tingkat keberhasilan
+# 								identifikasi di atas 90 persen.
+#                 				""",
+#                		'processed_text':'',
+#                		'text_class':'data_mining'
+#                 }
+#                 ,
+#                 {
+#                 	'title':'sample-7',
+#                 	'raw_text' : """
+#                                 Iris mata manusia memiliki pola yang sangat unik dan berbeda pada setiap manusia, sehingga
+#                                 sangat mungkin untuk menggunakannya sebagai dasar pengenalan biometric yang dikenal
+#                                 dengan ilmu iridology. Iridology adalah metode pembacaan peta pada mata untuk mendeteksi
+#                                 beberapa jenis penyakit dengan menggunakan pola pengamatan iris mata. Pada penelitian ini
+#                                 penulis mengambil data iris mata menggunakan kamera digital, namun citra iris mata yang
+#                                 didapatkan masih tampak kabur sehingga memerlukan pengolahan untuk mengurangi
+#                                 kekaburan. Penulis mendesain perangkat lunak untuk meningkatkan kualitas citra foto iris
+#                                 mata yang memiliki gejala kolesterol. Metode yang digunakan adalah ekstraksi ciri moment
+#                                 invariant, dibantu dengan algoritma K-Means Clustering untuk perhitungan jarak pusat
+#                                 cluster pada citra iris mata. Dari hasil citra iris mata yang telah diujikan dapat
+#                                 dikelompokkan menjadi iris mata normal dan iris mata penderita kolesterol tinggi. Dalam
+#                                 penelitian ini tingkat akurasi dari data penelitian adalah sebesar 95 persen.
+#                 				""",
+#                		'processed_text':'',
+#                		'text_class':'data_mining'
+#                 }
+#                 ,
+#                 {
+#                 	'title':'sample-8',
+#                 	'raw_text' : """
+#                                 Informasi yang tersedia pada halaman-halaman web trunojoyo.ac.id semakin besar,
+#                                 belum tertata dengan baik, belum terstruktur atau terkategori mengikuti kaidah tertentu
+#                                 dan tersebar pada banyak sub-domain. Sejauh ini, tidak ada gerbangatau portal web yang
+#                                 menyediakan akses ke berbagai situs webyang dihosting oleh data center PTIK
+#                                 Universitas Trunojoyo. Salah satu masalah yang telah diselesaikan adalah
+#                                 pengelompokan informasi atau berita web tersebut secara otomatis menggunakan
+#                                 algoritma clustering K-Means. Search engine RISE yang telah berjalan menghimpun
+#                                 semua halaman web yang ditulis dalam bahasa Indonesia di bawah domain
+#                                 trunojoyo.ac.id menggunakan teknik crawling. Halaman-halaman tersebut kemudian
+#                                 dipre-processing menggunakan teknik standar dalam text minig (informationm retrieval).
+#                                 Proses utamanya adalah penerapan teknik k-menas sehingga terbentuk kelompok-
+#                                 kelompok berita otonom. Pengujian yang telah dilakukan menunjukkan bahwa teknik
+#                                 clustering yang diterapkan mampu bekerja dengan baik dan memberikan akurasi yang
+#                                 memuaskan. Ada sekitar 300 halaman web yang dilibatkan dalam proses clustering
+#                                 dimana diperoleh ukuran rata-rata F-Measure sebesar 0.6129192 dan Purity bernilai
+#                                 0.67294195. Faktor yang cukup berpengaruh dalam clustering dan klasifikasi teks bahasa
+#                                 Indonesia adalah fase pre-processing, terutama pada pendekatan stemming. Perbaikan
+#                                 terhadap teknik stemming diyakini akan meningkatkan akurasi pengelompokan dokumen.
+#                 				""",
+#                		'processed_text':'',
+#                		'text_class':'data_mining'
+#                 }
+#                 ,
+#                 {
+#                 	'title':'sample-9',
+#                 	'raw_text' : """
+#                                 Web mining untuk pencarian berdasarkan kata kunci dengan pengklasteran otomatis
+#                                 adalah suatu metode pencarian dokumen dengan cara mengelompokkan atau mengklaster
+#                                 dokumen dari dokumen-dokumen berdasarkan kata kuncinya. Selanjutnya dilakukan
+#                                 pengklasteran dengan metode centroid linkage hierarchical method (CLHM) terhadap jumlah
+#                                 kata kunci yang diperoleh dari masing-masing dokumen. Dalam pengklasteran, umumnya harus
+#                                 dilakukan inisialisasi jumlah klaster yang ingin dibentuk terlebih dahulu, padahal pada beberapa
+#                                 kasus pengklasteran, user bahkan tidak tahu berapa banyak klaster yang bisa dibangun. Untuk
+#                                 itu, pada makalah ini diaplikasikan metode Valley Tracing sebagai constraint yang akan
+#                                 melakukan identifikasi terhadap pergerakan varian dari tiap tahap pembentukan klaster dan
+#                                 menganalisa polanya untuk membentuk suatu klaster secara otomatis (automatic clustering).
+#                                 Data yang digunakan adalah data hasil dari proses text mining pada dokumen. Dari percobaan
+#                                 yang dilakukan dengan 424 dokumen hasilnya memberikan simpulan bahwa pada umumnya
+#                                 pencarian dokumen menggunakan teknik pengklasteran dengan algoritma CLHM dapat
+#                                 digunakan untuk mengelompokkan dokumen dengan jumlah yang tepat secara otomatis.
+#                 				""",
+#                		'processed_text':'',
+#                		'text_class':'data_mining'
+#                 }
+#                 ,
+#                 {
+#                 	'title':'sample-10',
+#                 	'raw_text' : """
+#                                 Banyaknya dokumen jurnal yang terus bertambah membuat pengelompokkan dokumen jurnal
+#                                 semakin sulit karena memperlambat pencarian dokumen. Oleh karena itu, pengelompokkan dokumen jurnal
+#                                 diperlukan untuk mempercepat pencarian yang diperoleh dari query yang diinput pengguna dan menghasilkan
+#                                 hasil yang relevan dengan query tersebut. Penelitian ini bertujuan untuk menerapkan algoritma K-Means
+#                                 dalam mengelompokkan dokumen jurnal yang sesuai dengan query yang diinput sehingga menghasilkan
+#                                 kelompok-kelompok yang sesuai dengan query. Dalam prosesnya dilakukan tahap preprocessing yaitu
+#                                 tokenization, penghilangan stopwords dan stemming. Selanjutnya, pengelompokkan dokumen dilakukan
+#                                 dengan algoritma K-Means menggunakan bahasa pemrograman PHP dengan menggunakan proses stemming
+#                                 dan non-stemming untuk mengetahui kerelevanan hasil yang diperoleh dari masing-masing proses. Hasil dari
+#                                 pengelompokkan dokumen dengan menggunakan proses stemming menghabiskan waktu lebih banyak
+#                                 dibandingkan dengan proses non-stemming karena proses stemming harus menemukan terlebih dahulu kata
+#                                 dasar dari query yang diinput sedangkan dalam proses non-stemming tidak diperlukan proses pencarian kata
+#                                 dasar, hasil pengelompokan menggunakan proses stemming lebih relevan dibandingkan dengan
+#                                 pengelompokan dengan menggunakan proses non-stemming, pengujian dengan menggunakan dataset yang
+#                                 sedikit membuat pengembang kesulitan dalam membedakan hasil kelompok antara proses stemming dan
+#                                 proses non-stemming, penentuan titik pusat awal sangat berpengaruh terhadap jumlah cluster yang terbentuk
+#                                 serta pengelompokan dokumen ini juga dapat membantu pengguna menemukan dokumen yang relevan sesuai
+#                                 dengan query yang diinput.
+#                 				""",
+#                		'processed_text':'',
+#                		'text_class':'data_mining'
+#                 }
+#                 ,
+#                 {
+#                 	'title':'sample-11',
+#                 	'raw_text' : """
+#                                 Dengan diberlakukannya UU No. 4 Tahun 2009 tentang Pertambangan Mineral dan Batubara, yang di
+#                                 dalamnya menyatakan bahwa Wilayah Pertambangan (WP) adalah bagian dari tata ruang nasional dan
+#                                 menjadi landasan untuk dapat dilakukannya kegiatan usaha tambang, maka penetapan WP menjadi
+#                                 sangat penting artinya. Dari pernyataan tersebut menjadikan daerah yang berpotensi bahan tambang
+#                                 harus secepat mungkin mengantisipasinya agar suatu potensi bahan tambang yang ada dapat
+#                                 dimanfaatkan secara optimal. Dalam upaya menentukan peruntukan lahan sebagai lahan usaha
+#                                 tambang banyak cara dapat digunakan antara lain metode statistik K-Means Clustering berbasis
+#                                 Sistem Informasi Geografi (SIG). Inti dari metode ini adalah pengelompokan objek-objek berdasarkan
+#                                 karakteristik yang dimilikinya. Pengelompokan dilakukan terhadap data a-spasial yang merupakan
+#                                 keluaran atau hasil analisis spasial dengan teknik SIG. Sebagai studi kasus penerapan metode ini
+#                                 dilakukan pada penentuan peruntukan lahan usaha tambang di Kabupaten Sukabumi, Propinsi Jawa
+#                                 Barat.
+#                 				""",
+#                		'processed_text':'',
+#                		'text_class':'data_mining'
+#                 }
+#                 ,
+#                 {
+#                 	'title':'sample-12',
+#                 	'raw_text' : """
+#                                     Makalah ini membahas pengelompokan
+#                                     mahasiswa berdasarkan data akademik menggunakan teknik
+#                                     clustering dan membuat aplikasinya kemudian menganalisis
+#                                     hasilnya sehingga
+#                                     diharapkan
+#                                     mampu
+#                                     memberikan
+#                                     informasi bagi yang berkepentingan. Algoritma K-Means
+#                                     merupakan salah satu algoritma teknik clustering yang
+#                                     dimulai dengan pemilihan secara acak K, yang merupakan
+#                                     banyaknya cluster yang ingin dibentuk dari data yang akan di
+#                                     kluster, yaitu nilai tes mahasiswa saat masuk dan Indeks
+#                                     Prestasi Komulatif mahasiswa sampai semester 8. Sistem
+#                                     yang dibuat menampilkan hasil klustering data akademik
+#                                     mahasiswa, yaitu pola dari prestasi mahasiswa yang
+#                                     klusternya tetap, turun dan naik, dan dapat terlihat dari asal
+#                                     program studi, asal kota dan asal SMA. Dari hasil studi
+#                                     kasus dapat diperoleh informasi mahasiswa yang tetap pada
+#                                     kluster seperti awal masuk sebanyak 422 (45, 085%),
+#                                     mahasiswa yang naik kluster sebanyak 284 (30,342%) dan
+#                                     mahasiswa yang turun klusternya sebanyak 230 (24,573%)
+#                 				""",
+#                		'processed_text':'',
+#                		'text_class':'data_mining'
+#                 }
+#                 ,
+#                 {
+#                 	'title':'sample-13',
+#                 	'raw_text' : """
+#                                 Algoritma genetika yang pertama kali diperkenalkan secara terpisah oleh Holland dan De
+#                                 Jong pada tahun 1975 merupakan teknik pencarian nilai optimum secara stochastic
+#                                 berdasarkan prinsip dasar dari teori evolusi. Kemudian, berbagai aplikasi algoritma
+#                                 genetika telah dikembangkan, seperti misalnya dalam bidang penyusunan jadwal dan
+#                                 urutan kegiatan, penilaian keandalan desain, penentuan rute dan jadwal kendaraan,
+#                                 pengaturan tata letak peralatan/mesin di dalam pabrik, analisis distribusi pergerakan
+#                                 dalam perencanaan transportasi, optimasi anggaran pemeliharaan jaringan jalan, dsb.
+#                                 Riset tentang penerapan algoritma genetika untuk menentukan koridor jalan kereta api
+#                                 antara Makassar-Pare 2 yang paling ekonomis sedang dikerjakan. Sementara itu, makalah
+#                                 ini dimaksudkan untuk mendiskusikan tahapan proses dari algoritma genetika melalui
+#                                 contoh pencarian nilai fungsi sinus maksimum dengan menggunakan program komputer
+#                                 GA, yang khusus dikembangkan untuk keperluan akademik. Faktor 2 yang mempengaruhi
+#                                 ketelitian hasil pencarian nilai fungsi sinus maksimum yang diperoleh juga dijelaskan
+#                                 secara rinci di sini dengan mengoperasikan program GA secara berulang-ulang.
+#                 				""",
+#                		'processed_text':'',
+#                		'text_class':'artificial_intelligence'
+#                 }
+#                 ,
+#                 {
+#                 	'title':'sample-14',
+#                 	'raw_text' : """  
+#                                     Penjadwalan kegiatan belajar mengajar dalam
+#                                     suatu kampus adalah hal yang rumit. Permasalahan
+#                                     yang sering disebut dengan University Timetabling
+#                                     Problems (UTP) ini. selain dilihat dari sisi mahasiswa,
+#                                     juga harus dilihat dari sisi dosen, yaitu kemungkinan-
+#                                     kemungkinan dosen akan mengampu lebih dari satu
+#                                     mata kuliah yang ada, sebab ada kemungkinan jumlah
+#                                     mata kuliah dan jumlah dosen tidak sebanding,
+#                                     sehingga harus dipikirkan juga solusi agar dosen tidak
+#                                     mengampu dua mata kuliah berbeda pada hari dan
+#                                     jam yang sama. Selain itu, harus dipertimbangkan
+#                                     juga ketersediaan kelas sehingga kegiatan belajar
+#                                     dapat dilaksanakan.
+#                                     Salah satu metode yang dapat digunakan untuk
+#                                     menyelesaikan permasalahan tersebut adalah dengan
+#                                     menggunakan
+#                                     pendekatan
+#                                     algoritma
+#                                     genetik.
+#                                     Algoritma
+#                                     genetik
+#                                     merupakan
+#                                     pendekatan
+#                                     komputasional untuk menyelesaikan masalah yang
+#                                     dimodelkan dengan proses biologi dari evolusi.
+#                                     Diharapkan dengan digunakannya algoritma
+#                                     genetik akan diperoleh optimasi penjadwalan yaitu
+#                                     kondisi dimana terjadi kombinasi terbaik untuk
+#                                     pasangan mata kuliah dan dosen pengajar secara
+#                                     keseluruhan, tidak ada permasalahan bentrokan
+#                                     jadwal pada sisi mahasiswa, serta ketersediaan ruang
+#                                     yang cukup dan sesuai secara fasilitas untuk seluruh
+#                                     mata kuliah yang ada.
+#                 				""",
+#                		'processed_text':'',
+#                		'text_class':'artificial_intelligence'
+#                 }
+#                 ,
+#                 {
+#                 	'title':'sample-15',
+#                 	'raw_text' : """
+#                                     Perhatian masyarakat terhadap wisata kuliner mempengaruhi kecenderungan dan gaya
+#                                     dalam berwisata. Pelancong tidak hanya berfikir tentang tempat apa yang layak
+#                                     dikunjungi namun juga memikirkan makanan apa yang dapat dinikmati keunikan dan
+#                                     kenyamanannya. Kondisi ini membawa perubahan pertimbangan seorang pelancong
+#                                     melakukan pilihan terhadap alternatif kunjungan wisata. Rekomendasi tentang faktor
+#                                     pilihan wisata, kesesuaian selera tempat makan, dan waktu perjalanan menjadi hal
+#                                     yang penting. Dalam penelitian ini dilakukan pendekatan terhadap masalah tersebut
+#                                     dengan menganalogikan pada kasus pemilihan rute manakah yang memiliki biaya
+#                                     paling murah untuk dilalui seorang pelancong yang harus mengunjungi sejumlah m
+#                                     daerah tujuan wisata (m > 1). Tiap daerah tujuan harus dikunjungi tepat satu kali dan
+#                                     kemudian kembali lagi ke tempat semula (Travelling Salesman Problem (TSP)). TSP
+#                                     merupakan masalah kombinatorial yang solusi optimumnya hanya dapat didapatkan
+#                                     dengan mencoba semua kemungkinan sehingga memerlukan waktu komputasi yang
+#                                     cukup tinggi. Berbeda dengan fungsi TSP konvensional yang tujuannya hanya
+#                                     meminimalkan jarak, kasus rekomendasi ini harus mencocokkan pilihan wisata,
+#                                     kesesuaian selera tempat makan, dan waktu perjalanan. Algoritma Genetika
+#                                     (GA)terbukti sesuai untuk menyelesaikan masalah multi obyektif, sehingga dapat
+#                                     diterapkan untuk sistem rekomendasi wisata kuliner Metode crossover dengan satu
+#                                     titik potong dan mutasi dengan pergeseran gen pada GA mampu menyelesaikan
+#                                     masalah dengan jumlah iterasi kurang dari 40 dan dalam waktu kurang dari 10 detik.
+#                 				""",
+#                		'processed_text':'',
+#                		'text_class':'artificial_intelligence'
+#                 }
+#             ]
+
+# criteria_data = {
+#                 'text_class': ['china', 'japan']
+#             }
+# test_data = [
+#                 {
+#                     'title':'sample-05', 
+#                     'raw_text':"""Chinese Chinese Chinese Tokyo Japan""", 
+#                     'processed_text':'',
+#                     'text_class':'',
+#                 },
+#             ]
+# training_data = [
+#                     {
+#                         'title':'sample-01', 
+#                         'raw_text':"""Chinese Beijing Chinese""", 
+#                         'processed_text':'',
+#                         'text_class':'china',
+#                     },
+#                     {
+#                         'title':'sample-02', 
+#                         'raw_text':"""Chinese Chinese Shanghai""", 
+#                         'processed_text':'',
+#                         'text_class':'china',
+#                     },
+#                     {
+#                         'title':'sample-03', 
+#                         'raw_text':"""Chinese Macao""", 
+#                         'processed_text':'',
+#                         'text_class':'china',
+#                     },
+#                     {
+#                         'title':'sample-04', 
+#                         'raw_text':"""Tokyo Japan Chinese""", 
+#                         'processed_text':'',
+#                         'text_class':'japan',
+#                     },
+#                 ]
+
+# criteria_data = {
+#                 'text_class': ['android', 'delphi', 'office']
+#             }
+# test_data = [
+#                 {
+#                     'title':'sample-07', 
+#                     'raw_text':"""Tolong dong, gimana membuat slider gambar di Android.""", 
+#                     'processed_text':'',
+#                     'text_class':'',
+#                 },
+#             ]
+# training_data = [
+#                     {
+#                         'title':'sample-01', 
+#                         'raw_text':"""Bagaimana cara membuat Galeri Image
+#                                         pada Eclipse""", 
+#                         'processed_text':'',
+#                         'text_class':'Android',
+#                     },
+#                     {
+#                         'title':'sample-02', 
+#                         'raw_text':"""Ada yang tau gak cara membuat koneksi
+#                                         pada Delphi dengan MysQL""", 
+#                         'processed_text':'',
+#                         'text_class':'delphi',
+#                     },
+#                     {
+#                         'title':'sample-03', 
+#                         'raw_text':"""Saya
+#                                         kesulitan
+#                                         dalam
+#                                         membuat
+#                                         Mailmerge pada Ms Word, bagaimana
+#                                         caranya ya?""", 
+#                         'processed_text':'',
+#                         'text_class':'office',
+#                     },
+#                     {
+#                         'title':'sample-04', 
+#                         'raw_text':"""Membuat fungsi Sum pada Ms Excel
+#                                         seperti apa ya?""", 
+#                         'processed_text':'',
+#                         'text_class':'office',
+#                     },
+#                     {
+#                         'title':'sample-05', 
+#                         'raw_text':"""Bagaimana cara menghilangkan warning
+#                                         pada Android""", 
+#                         'processed_text':'',
+#                         'text_class':'android',
+#                     },
+#                     {
+#                         'title':'sample-06', 
+#                         'raw_text':"""Bagaimana membuat form cetak dengan
+#                                         Delphi""", 
+#                         'processed_text':'',
+#                         'text_class':'delphi',
+#                     },
+#                 ]
