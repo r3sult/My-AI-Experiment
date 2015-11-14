@@ -233,11 +233,6 @@ def naive_bayes(item):
                         if txt2 == ptxt:
                             count_term = count_term + 1
 
-            # print count_term
-            # print count_word
-            # print keywords_len
-            # print ""
-
             temp_p_ai_vj = (float(count_term) + 1) / (count_word + keywords_len)
             p_ai_vj = p_ai_vj * temp_p_ai_vj
 
