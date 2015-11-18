@@ -221,6 +221,7 @@ def naive_bayes(item):
     keywords_len = len(keywords)
     print keywords_len
 
+    result = []
     for classy in criteria_data[classifier]:
         p_ai_vj = 1.0
         for ptxt in item['processed_text']:
@@ -236,43 +237,19 @@ def naive_bayes(item):
             temp_p_ai_vj = (float(count_term) + 1) / (count_word + keywords_len)
             p_ai_vj = p_ai_vj * temp_p_ai_vj
 
+        probability_data[classy]['p_ci_x'] =  p_ai_vj * probability_data[classy]['value']
+        result.append(probability_data[classy]['p_ci_x'])
         print classy, ':', p_ai_vj * probability_data[classy]['value']
+        
+    final_result = max(result)
 
-    # menghitung P(X | Ci)
-    # for classy in criteria_data[classifier]:
-    #     for key in item:
-    #         if key != classifier:
-    #             temp = 0.0
-    #             for data in training_data:
-    #                 if data[key] == item[key] and data[classifier] == classy:
-    #                     temp = temp + 1
-                
-    #             probability_data[classy][key][item[key]] = temp / probability_data[classy]['length']
+    for classy in criteria_data[classifier]:
+        if final_result == probability_data[classy]['p_ci_x']:
+            item[classifier] = classy 
 
-    # menghitung P(X)
-    # for classy in criteria_data[classifier]:
-    #     temp = 1.0
-    #     for key in item:
-    #         if key != classifier:
-    #             temp = temp * probability_data[classy][key][item[key]]
-
-    #     probability_data[classy]['p_x'] = temp
-
-    # # menghitung P(Ci | X)
-    # result = []
-    # for classy in criteria_data[classifier]:
-    #     probability_data[classy]['p_ci_x'] = probability_data[classy]['p_x'] * probability_data[classy]['value']
-    #     result.append(probability_data[classy]['p_ci_x'])
-
-    # final_result = max(result)
-
-    # for classy in criteria_data[classifier]:
-    #     if final_result == probability_data[classy]['p_ci_x']:
-    #         item[classifier] = classy 
-
-    # # print probability_data
-    # print "\n====== HASIL AKHIR ======"
-    # print item
+    # print probability_data
+    print "\n====== HASIL AKHIR ======"
+    print item
 
 open_stopwords()
 initialized_docbase()
