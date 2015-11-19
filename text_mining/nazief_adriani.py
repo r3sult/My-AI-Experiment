@@ -10,19 +10,28 @@ derivation_suffix_list = "(.*)an$|(.*)kan$|(.*)i$"
 derivation_prefix_list = "di(.*)$|ke(.*)$|se(.*)$|me(.*)$|be(.*)$|pe(.*)$|te(.*)$"
 derivation_prefix_format_me_1 = "ny[a|i|u|e|o](.*)$"
 derivation_prefix_format_me_2 = "ng[a-z](.*)$"
-derivation_prefix_format_me_3 = "m[a-z](.*)$"
+derivation_prefix_format_me_3 = "m[^aeiou](.*)$"
+derivation_prefix_format_me_4 = "n[a-z](.*)$"
 derivation_prefix_format_be_1 = "r[^aeiou](.*)$"
+derivation_prefix_format_be_2 = "l[aeiou](.*)$"
 
 # contoh kata yang akan distem
 test_words = ['sepakan', 'sepekan', 'kelistrikan', 'komputer', 'kamulah', 'topimu', 'bajuku', 'mobilnya', 'listrik', 
 				'awan', 'bersatu', 'jayalah', 'selalu', 'bajukulah', 'dimanapun', 'kesehatannya', 'uangmu', 'kesalahannyalah', 
-				'menyelesaikannya', 'menggalakkan', 'persawahan' ,'menyalahi', 'mempergunakan', 'memberdayakan', 'tarian', 'seimbang', 'bekantan', 'beo', 'membeo']
+				'menyelesaikannya', 'menggalakkan', 'persawahan' ,'menyalahi', 'mempergunakan', 'memberdayakan', 'tarian', 
+				'seimbang', 'bekantan', 'beo', 'membeo', 'kekeliruan', 'tercatat', 'tercantum', 'mengharapkan', 'balasan', 'tersedia',
+				'persediaannya', 'ketersediaannya' ,'berkesempatan', 'menaruh', 'menanam', 'menanak', 'menukarkan', 'pewangi', 'belajar', 'belikan',
+				'pelamar', 'pemakan', 'penanti', 'penyiram', 'penyabar', 'pemikir', 'pemotong', 'pemberi', 'pembunuh', 'pemberian', 'pembunuhan',
+				'penjahit', 'pendidik', 'pencuci', 'penzina', 'penikam', 'perkantoran', 'pergelaran', 'perhitungan', 'keatas', 'kelakuan', 
+				'mewarna', 'merawat', 'menaik', 'memasak', 'melempar', 'menyapu', 'menyatu', 'memberi', 'membesuk', 'mengoplos', 'mengasuh', 'mengubah',
+				'mengekor', 'menginap', 'seekor', 'searah', 'senasib', 'sebungkus']
 
 def stringify(bag_of_words):
 	res = ""
 	i = 1
 	for words in bag_of_words:
-		temp = '"' +words+ '"'
+		temp_words = ''.join(words)
+		temp = '"' +temp_words+ '"'
 		res = res + temp
 
 		if len(bag_of_words) == i:
@@ -90,7 +99,7 @@ def stemming_nazief_adriani(bag_of_words):
 	stemmed_words = stemmed_words + temp_root_words
 	unstemmed_words = get_unstemmed_words(unstemmed_words, stemmed_words)
 
-	print "after word particle list:"
+	print "==> after word particle list:"
 	print unstemmed_words
 	print ""
 
@@ -104,13 +113,13 @@ def stemming_nazief_adriani(bag_of_words):
 					temp_word_list.append(re_words)
 		else:
 			temp_word_list.append(words)
-
+			
 	unstemmed_words = temp_word_list
 	temp_root_words = check_root_words(unstemmed_words)
 	stemmed_words = stemmed_words + temp_root_words
 	unstemmed_words = get_unstemmed_words(unstemmed_words, stemmed_words)
 
-	print "after possesive pronoun list:"
+	print "==> after possesive pronoun list:"
 	print unstemmed_words
 	print ""
 
@@ -119,29 +128,11 @@ def stemming_nazief_adriani(bag_of_words):
 	for words in unstemmed_words:
 		temp_words = re.match(r''+inflection_suffix_list, words, re.M|re.I)
 		if (temp_words is not None):
+			temp_re_words = ""
 			for re_words in temp_words.groups():
 				if re_words != None:
-					temp_word_list.append(re_words)
-		else:
-			temp_word_list.append(words)
-
-	unstemmed_words = temp_word_list
-	temp_root_words = check_root_words(unstemmed_words)
-	stemmed_words = stemmed_words + temp_root_words
-	unstemmed_words = get_unstemmed_words(unstemmed_words, stemmed_words)
-
-	print "after inflection suffix list:"
-	print unstemmed_words
-	print ""
-
-	# membersihkan unstemmed_words dari derivation suffixes
-	temp_word_list = []
-	for words in unstemmed_words:
-		temp_words = re.match(r''+derivation_suffix_list, words, re.M|re.I)
-		if (temp_words is not None):
-			for re_words in temp_words.groups():
-				if re_words != None:
-					temp_word_list.append(re_words)
+					temp_re_words = re_words
+			temp_word_list.append(temp_re_words)
 		else:
 			temp_word_list.append(words)
 
@@ -151,7 +142,46 @@ def stemming_nazief_adriani(bag_of_words):
 	stemmed_words = stemmed_words + temp_root_words
 	unstemmed_words = get_unstemmed_words(unstemmed_words, stemmed_words)
 
-	print "after derivation suffix list:"
+	print "==> after inflection suffix list 1000:"
+	print unstemmed_words
+	print ""
+
+	# restore list yang sudah distem derivation suffixes
+	temp_unstemmed_words = []
+	for words in prev_unstemmed_words:
+		for words2 in unstemmed_words: 
+			x = re.search(r''+words2+'(.*)', words)
+			if x != None:
+				temp_unstemmed_words.append(x.string)
+
+	print temp_unstemmed_words
+
+	# membersihkan unstemmed_words dari derivation suffixes
+	unstemmed_words = temp_unstemmed_words
+	temp_word_list = []
+	for words in unstemmed_words:
+		temp_words = re.match(r''+derivation_suffix_list, words, re.M|re.I)
+		if (temp_words is not None):
+			temp_re_words = ""
+			for re_words in temp_words.groups():
+				if re_words != None:
+					temp_re_words = list(re_words)
+			if (temp_re_words[len(temp_re_words)-1] == 'k'):
+				temp_re_words[len(temp_re_words)-1] = ""
+		
+			temp_re_words = ''.join(temp_re_words)
+			temp_word_list.append(temp_re_words)
+
+		else:
+			temp_word_list.append(words)
+
+	prev_unstemmed_words = unstemmed_words
+	unstemmed_words = temp_word_list
+	temp_root_words = check_root_words(unstemmed_words)
+	stemmed_words = stemmed_words + temp_root_words
+	unstemmed_words = get_unstemmed_words(unstemmed_words, stemmed_words)
+
+	print "==> after derivation suffix list:"
 	print unstemmed_words
 	print ""
 
@@ -201,9 +231,29 @@ def stemming_nazief_adriani(bag_of_words):
 
 			temp_clean_words = clean_words	
 			clean_words = ""
+			re_clean_words = re.match(r''+derivation_prefix_format_me_4, temp_clean_words)
+			if (re_clean_words is not None):
+				temp_clean_words = list(temp_clean_words)
+				temp_clean_words[0] = 't'
+				clean_words = ''.join(temp_clean_words)
+			else:
+				clean_words = temp_clean_words
+
+			temp_clean_words = clean_words	
+			clean_words = ""
 			re_clean_words = re.match(r''+derivation_prefix_format_be_1, temp_clean_words)
 			if (re_clean_words is not None):
 				clean_words = temp_clean_words.replace('r', '')
+			else:
+				clean_words = temp_clean_words
+
+			temp_clean_words = clean_words	
+			clean_words = ""
+			re_clean_words = re.match(r''+derivation_prefix_format_be_2, temp_clean_words)
+			if (re_clean_words is not None):
+				temp_clean_words = list(temp_clean_words)
+				temp_clean_words[0] = ''
+				clean_words = ''.join(temp_clean_words)
 			else:
 				clean_words = temp_clean_words
 
@@ -216,19 +266,25 @@ def stemming_nazief_adriani(bag_of_words):
 	stemmed_words = stemmed_words + temp_root_words
 	unstemmed_words = get_unstemmed_words(unstemmed_words, stemmed_words)
 
-	print "after derivation prefix list:"
+	print "==> after derivation prefix list:"
 	print unstemmed_words
 	print ""
-
 	
 	# membersihkan unstemmed_words dari derivation suffixes
 	temp_word_list = []
 	for words in unstemmed_words:
 		temp_words = re.match(r''+derivation_suffix_list, words, re.M|re.I)
 		if (temp_words is not None):
+			temp_re_words = ""
 			for re_words in temp_words.groups():
 				if re_words != None:
-					temp_word_list.append(re_words)
+					temp_re_words = list(re_words)
+			if (temp_re_words[len(temp_re_words)-1] == 'k'):
+				temp_re_words[len(temp_re_words)-1] = ""
+		
+			temp_re_words = ''.join(temp_re_words)
+			temp_word_list.append(temp_re_words)
+
 		else:
 			temp_word_list.append(words)
 
@@ -238,9 +294,134 @@ def stemming_nazief_adriani(bag_of_words):
 	stemmed_words = stemmed_words + temp_root_words
 	unstemmed_words = get_unstemmed_words(unstemmed_words, stemmed_words)
 
-	print "after derivation suffix list:"
+	print "==> after derivation suffix list:"
 	print unstemmed_words
 	print ""
+
+	# membersihkan k di huruf akhir
+	# temp_word_list = []
+	# for words in unstemmed_words:
+	# 	temp_words = list(words)
+	# 	if (temp_words[len(temp_words)-1] == 'k'):
+	# 		temp_words[len(temp_words)-1] = ""
+		
+	# 	temp_words = ''.join(temp_words)
+	# 	temp_word_list.append(temp_words)
+
+	# prev_unstemmed_words = unstemmed_words
+	# unstemmed_words = temp_word_list
+	# temp_root_words = check_root_words(unstemmed_words)
+	# stemmed_words = stemmed_words + temp_root_words
+	# unstemmed_words = get_unstemmed_words(unstemmed_words, stemmed_words)
+
+	# print "==> after inflection suffix list 1000:"
+	# print unstemmed_words
+	# print ""
+
+	# restore list yang sudah distem derivation suffixes
+	temp_unstemmed_words = []
+	for words in prev_unstemmed_words:
+		for words2 in unstemmed_words: 
+			x = re.search(r''+words2+'(.*)', words)
+			if x != None:
+				temp_unstemmed_words.append(x.string)
+
+	print temp_unstemmed_words
+
+	# membersihkan unstemmed words dari derivation prefix
+	unstemmed_words = temp_unstemmed_words
+	temp_word_list = []
+	for words in unstemmed_words:
+		temp_words = re.match(r''+derivation_prefix_list, words, re.M|re.I)
+		if (temp_words is not None):
+			temp_clean_words = ""
+			for re_words in temp_words.groups():
+				if re_words != None:
+					temp_clean_words = re_words
+
+			clean_words = ""
+			re_clean_words = re.match(r''+derivation_prefix_format_me_1, temp_clean_words)
+			if (re_clean_words is not None):
+				clean_words = temp_clean_words.replace('ny', 's')
+			else:
+				clean_words = temp_clean_words
+
+			temp_clean_words = clean_words	
+			clean_words = ""
+			re_clean_words = re.match(r''+derivation_prefix_format_me_2, temp_clean_words)
+			if (re_clean_words is not None):
+				clean_words = temp_clean_words.replace('ng', '')
+			else:
+				clean_words = temp_clean_words
+			
+			temp_clean_words = clean_words	
+			clean_words = ""
+			re_clean_words = re.match(r''+derivation_prefix_format_me_3, temp_clean_words)
+			if (re_clean_words is not None):
+				clean_words = temp_clean_words.replace('m', '')
+			else:
+				clean_words = temp_clean_words
+
+			temp_clean_words = clean_words	
+			clean_words = ""
+			re_clean_words = re.match(r''+derivation_prefix_format_me_4, temp_clean_words)
+			if (re_clean_words is not None):
+				temp_clean_words = list(temp_clean_words)
+				temp_clean_words[0] = 't'
+				clean_words = ''.join(temp_clean_words)
+			else:
+				clean_words = temp_clean_words
+
+			temp_clean_words = clean_words	
+			clean_words = ""
+			re_clean_words = re.match(r''+derivation_prefix_format_be_1, temp_clean_words)
+			if (re_clean_words is not None):
+				clean_words = temp_clean_words.replace('r', '')
+			else:
+				clean_words = temp_clean_words
+
+			temp_clean_words = clean_words	
+			clean_words = ""
+			re_clean_words = re.match(r''+derivation_prefix_format_be_2, temp_clean_words)
+			if (re_clean_words is not None):
+				temp_clean_words = list(temp_clean_words)
+				temp_clean_words[0] = ''
+				clean_words = ''.join(temp_clean_words)
+			else:
+				clean_words = temp_clean_words
+
+			temp_word_list.append(clean_words)
+		else:
+			temp_word_list.append(words)
+
+	unstemmed_words = temp_word_list
+	temp_root_words = check_root_words(unstemmed_words)
+	stemmed_words = stemmed_words + temp_root_words
+	unstemmed_words = get_unstemmed_words(unstemmed_words, stemmed_words)
+
+	print "==> after derivation prefix list:"
+	print unstemmed_words
+	print ""
+
+	# # membersihkan k di huruf akhir
+	# temp_word_list = []
+	# for words in unstemmed_words:
+	# 	temp_words = list(words)
+	# 	if (temp_words[len(temp_words)-1] == 'k'):
+	# 		temp_words[len(temp_words)-1] = ""
+		
+	# 	temp_words = ''.join(temp_words)
+	# 	temp_word_list.append(temp_words)
+
+	# prev_unstemmed_words = unstemmed_words
+	# unstemmed_words = temp_word_list
+	# temp_root_words = check_root_words(unstemmed_words)
+	# stemmed_words = stemmed_words + temp_root_words
+	# unstemmed_words = get_unstemmed_words(unstemmed_words, stemmed_words)
+
+	# print "==> after inflection suffix list 1000:"
+	# print unstemmed_words
+	# print ""
 
 	return stemmed_words
 
