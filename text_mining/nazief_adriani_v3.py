@@ -1,6 +1,10 @@
 import MySQLdb
 import re
 
+###CATATAN:
+# - belum mendukung sisipan
+# - belum mendukung kata berimbuhan gabungan: ditindaklanjuti, berterimakasih
+
 # konfigurasi program
 inflection_suffix_list = "(.*)lah$|(.*)kah$|(.*)ku$|(.*)mu$|(.*)nya$"
 word_particle_list = "(.*)lah$|(.*)kah$|(.*)tah$|(.*)pun$"
@@ -18,18 +22,37 @@ derivation_prefix_format_pe_1 = "t[^aeiou](.*)$"
 
 #### contoh kata yang akan distem
 test_words = []
-test_words = test_words +['sebungkus', 'senasib', 'searah', 'seekor']
+
+## JURNAL: ANALISA DAN EVALUASI AFIKS PADA STEMMING INDONESIA
+# test_words = test_words +['sebungkus', 'senasib', 'searah', 'seekor']
 # test_words = test_words +['menginap', 'mengasuh', 'mengubah', 'mengekor', 'mengoplos', 'memberi', 'membesuk', 'membusuk', 'menyapu', 'menyatu', 'menanam', 'menukar', 'melempar', 'memasak', 'menaik', 'merawat', 'mewarna']
 # test_words = test_words +['kebawa', 'keatas', 'perhitungan', 'pergelaran', 'perkantoran', 'penukar', 'penikam', 'penjahit', 'pendidik', 'pencuci', 'penzina', 'pemberi', 'pembunuh', 'penyiram', 'penyabar', 'pelamar', 'pemakan', 'penanti', 'pewangi']
-# test_words = test_words +['similarity', 'kesamaan', 'dokumen','dihitung', 'topic', 'topik', 'judul', 'abstraksi','diambil','indexnya', 'indeksnya', 'mencegah','terjadinya', 'duplikasi', 'plagiarisme']
 # test_words = test_words +['menganga', 'menyanyi', 'memaksa', 'memfitnah', 'memprotes']
-# test_words = test_words +['menulis', 'mencapai', 'menyapu', 'mengebom', 'mengambil', 'mengolah', 'mengunci'] #GAGAL
 # test_words = test_words +['perusak', 'penyanyi', 'pemaksa', 'pemprotes', 'pemfitnah', 'penulis', 'pencapai']
+# test_words = test_words +['mainan', 'temani', 'buatkan', 'bukankah', 'kapanpun', 'milikku']
+# test_words = test_words +['menulis', 'mencapai', 'menyapu', 'mengebom', 'mengambil', 'mengolah', 'mengunci'] #GAGAL
 # test_words = test_words +['penyapu', 'pengebom', 'pengambil', 'pengolah', 'pengunci', 'peredam', 'pelajar'] #GAGAL
 # test_words = test_words +['bekerja', 'berunding', 'belajar', 'terasa', 'terpergok', 'terkadang', 'tersudut', 'dimakan', 'ketua', 'sesama'] #GAGAL
-test_words = test_words +['mainan', 'temani', 'buatkan', 'bukankah', 'kapanpun', 'milikku']
 
-# test_words = ['berkeadilan']
+## JURNAL: IMPLEMENTASI MODIFIKASI ECS Stemmer
+# test_words = test_words + ['menyegel', 'pemungutan', 'menyerap', 'dikemas', 'selat', 'selatan', 'kemasan', 'terserap', 'pungut', 'segel']
+# test_words = test_words + ['desa', 'desakkan', 'pedesaan', 'berdesakkan', 'mendesak']
+# test_words = test_words + ['menyala', 'menyanyikan', 'menyatakannya', 'penyanyi', 'penyawaan'] #GAGAL
+# test_words = test_words + ['bekerjasama', 'berkewarganegaraan', 'berterimakasih', 'keanekaragaman'] #GAGAL
+# test_words = test_words + ['beratus', 'desakkan', 'ditahan', 'indukkan', 'keliaran', 'keluaran', 'kerusakkan', 'memadamkan']
+# test_words = test_words + ['memakai', 'memangkas', 'memperhatikan', 'menandai', 'mengembangkan', 'mengunjungi', 'mengurangi']
+
+## TWITTER
+# test_words = test_words + ['diajukan', 'memenuhi', 'salah', 'satu', 'syarat', 'menempuh', 'gelar', 's1']
+# test_words = test_words + ['gue', 'nggak', 'tahu', 'seharusnya', 'jokowi', 'ngebenerin', 'kabinetnya']
+# test_words = test_words + ['berita', 'muncul', 'selanjutnya',  'merupakan', 'rekayasa', 'jokowi',  'partai', 'kubu', 'terlihat', 'jelek']
+
+## JURNAL - JURNAL
+# test_words = test_words + ['proses', 'analyzing', 'proses', 'analisa', 'hasil', 'proses', 'tagging', 'diketahui', 'seberapa', 'jauh','tingkat','keterhubungan','antar', 'kata', 'kata', 'antar', 'dokumen', 'ada']
+# test_words = test_words + ['dibandingkan', 'dikumpulkan', 'dikatakan', 'dikepalanya', 'ditangkapnya', 'dipipinya', 'ditemukannya', 'dibandingkannya', 'dibayangkannya']
+# test_words = test_words +['similarity', 'kesamaan', 'dokumen','dihitung', 'topic', 'topik', 'judul', 'abstraksi','diambil','indexnya', 'indeksnya', 'mencegah','terjadinya', 'duplikasi', 'plagiarisme']
+# test_words = test_words + ['sebagai', 'buku', 'bagian', 'penambahan', 'siapapun', 'berbadan', 'minim', 'pemberitahuan', 'berupa', 'pemilu', 'peperangan', 'sekali', 'mengecek', 'mengakomodir', 'penerbangan', 'penebangan'] #GAGAL
+test_words = test_words + ['januari', 'februari', 'melitus', 'recycle','dump', 'dikelompokkan', 'defisiensi', 'prevalensi', 'metode', 'pemberian', 'bayi', 'dipengaruhi', 'menjalani', 'keterlambatan'] #GAGAL
 
 def stringify(bag_of_words):
 	res = ""
@@ -298,7 +321,7 @@ def stemming_nazief_adriani(bag_of_words):
 		print unstemmed_words
 		print ""
 	
-	for i in range(0, 3):
+	# for i in range(0, 3):
 		if len(unstemmed_words) != 0:	
 			temp_word_list = strip_derivation_suffixes(unstemmed_words)
 			prev_unstemmed_words = unstemmed_words
@@ -353,5 +376,6 @@ def stemming_nazief_adriani(bag_of_words):
 result = stemming_nazief_adriani(test_words)
 print "\n\n===> HASIL STEMMING:"
 print len(test_words)
+print test_words
 print len(result)
 print result
