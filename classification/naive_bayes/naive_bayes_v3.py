@@ -10,11 +10,12 @@ criteria_data = {
 test_data = [
                 {
                     'title':'sample-05', 
-                    'raw_text':"""Bukan Prabowonya yg jelek, tp menurutku Jokowi lebih baik drpd Prabowo untuk bisa jadi presiden. Dapat dilihat dr prestasi yg dibuktikan JKW""", 
+                    'raw_text':"""Jokowi keren, pemerintahannya sangat maju""", 
                     'processed_text':'',
                     'text_class':'',
                 },
             ]
+
 training_data = [
                     {
                         'title':'sample-20', 
