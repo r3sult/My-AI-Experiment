@@ -1,10 +1,3 @@
-# contoh test data
-# test_data = [
-#                 {'age': 'lte30', 'income':'medium', 'student':'yes', 'credit_ratings':'fair', 'buy_computer':''},
-#                 {'age': '31to40', 'income':'high', 'student':'yes', 'credit_ratings':'fair', 'buy_computer':''},
-#                 {'age': 'gt40', 'income':'medium', 'student':'no', 'credit_ratings':'excellent', 'buy_computer':''},
-#             ]
-
 classifier = ""
 criteria_data = {}
 probability_data = {}
@@ -61,13 +54,13 @@ def naive_bayes(item):
             item[classifier] = classy 
 
     # print probability_data
-    print "\n====== HASIL AKHIR ======"
     print item
 
 # ======== READ FILE PROCESS ========
 
 # membaca file yang akan dilakukan pemrosesan clustering
-files = open('data/car_evaluation.txt', 'r')
+files_list = ['iris', 'car_evaluation', 'yudi', 'zoo', 'marketing', 'nursery']
+files = open('data/'+files_list[4]+'.txt', 'r')
 
 for line in files:
     if line.find('@classifier') == 0:
@@ -119,7 +112,7 @@ for probe in probability_data:
         else:
             continue
 
-print probability_data
+# print probability_data
 
 files.seek(0)
 for line in files:
@@ -172,10 +165,6 @@ for line in files:
 
         test_data.append(temp_training)
 
-# print "\n============= TRAINING DATA ==============="
-# for dat in training_data:
-#     print dat
-
 print "\n============= TEST DATA ==================="
 for dat in test_data:
     print dat
@@ -184,5 +173,6 @@ files.close()
 
 # ======== MAIN PROCESS ==========
 init_bayesian()
+print "====== HASIL AKHIR ======"
 for i in test_data:
     naive_bayes(i)

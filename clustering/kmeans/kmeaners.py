@@ -140,7 +140,7 @@ def main_process (cluster_attribute, data_cluster, centroid):
         elif (centroid_similarity > 0):
             new_cluster = do_cluster(new_centroid, data_cluster)
             prev_centroid = new_centroid
-
+            
     print_cluster(new_cluster, 'cluster', new_centroid)
 
 # variabel global
@@ -151,7 +151,7 @@ headers = []
 cluster = 5
 
 # membaca file yang akan dilakukan pemrosesan clustering
-files = open('data/tfidf-2.txt', 'r')
+files = open('data/quake.txt', 'r')
 
 for line in files:
     if line.find('@attribute') == 0:

@@ -1,4 +1,7 @@
 
+from multiprocessing import Process, Queue
+import time
+
 test_data = {}
 all_item = []
 frequent_item_set = {}
@@ -11,12 +14,11 @@ def clean_double_item(input_list):
 	for item in input_list:
 		if item not in temp_list:
 			temp_list.append(item)
-
 	return temp_list
 
 # membaca file yang akan dilakukan pemrosesan apriori
-file_data = ['diaper', 'groceries', 'groceries-1', 'groceries-2', 'groceries-3']
-files = open('data/'+file_data[4]+'.txt', 'r')
+file_data = ['diaper', 'groceries', 'groceries-1', 'groceries-2', 'groceries-3', 'groceries-4', 'groceries-5', 'retail_sample']
+files = open('data/'+file_data[2]+'.txt', 'r')
 
 for line in files:
     if line.find('@min_transaction') == 0:
@@ -75,7 +77,6 @@ for item in all_item:
 		if item in test_data[item_set]:
 			count_item = count_item + 1
 	temp_rules.update({item:{'count':count_item, 'item_set':[item]}})
-
 frequent_item_set.update({'loop_1': temp_rules})
 
 # filtering rules
@@ -86,25 +87,18 @@ for item in frequent_item_set['loop_1']:
 
 print "====> step 1"
 i = 2
-process_counter = 0
 while temp_selected_rules != {}:
-	# print i, '. ===========================> '
-	# print temp_selected_rules
-	# print '\n'
-		
-	# buat kombinasi baru
 	temp_selected_rules_2 = temp_selected_rules
 	combined_rules = {}
 	for rules in temp_selected_rules:
+		time.sleep(0.0001)
 		for rules_2 in temp_selected_rules_2:
+			time.sleep(0.001)
 			temp_comb_item = clean_double_item(temp_selected_rules[rules]['item_set'] + temp_selected_rules_2[rules_2]['item_set'])
+			print temp_comb_item
 			if len(temp_comb_item) > i - 1:
 				combined_rules.update({'_'.join(temp_comb_item):{'count':0, 'item_set':temp_comb_item }})
-				print process_counter
-				process_counter = process_counter + 1
 
-	# for rules in combined_rules:
-	# 	print combined_rules[rules]
 
 	# loop_2
 	temp_rules = {}
@@ -125,20 +119,18 @@ while temp_selected_rules != {}:
 			
 			if conds:			
 				count_item = count_item + 1
-			
-		# print item, ":", count_item
 		temp_rules.update({item:{'count':count_item, 'item_set':temp_comb_item_set}})
 
 	idx = str(i)
 	frequent_item_set.update({'loop_'+idx: temp_rules})
-	# print frequent_item_set['loop_'+idx]
-
+	
 	# filtering rules
 	temp_selected_rules = {}
 	for item in frequent_item_set['loop_'+idx]:
 		if frequent_item_set['loop_'+idx][item]['count'] >= min_transaction:
 			temp_selected_rules.update({item:frequent_item_set['loop_'+idx][item]})
 
+	
 	i = i + 1
 
 print "====> step 2"
@@ -149,12 +141,8 @@ for item_set in frequent_item_set:
 			temp_item = frequent_item_set[item_set][item]
 			if temp_item['count'] >= min_transaction:
 				item_len = len(temp_item['item_set'])
-				# print temp_item['item_set']
-				# print temp_item['item_set'][0:(-1 + (item_len))], ' ===> ',temp_item['item_set'][(item_len-1)]
-				
 				temp_rules = {'count':temp_item['count'], 'antecendent':temp_item['item_set'][0:(-1 + (item_len))], 'consequent':temp_item['item_set'][(item_len-1)], 'support':0.0, 'confidence':0.0, 'support_confidence':0.0}
 				apriori_rules.update({'_'.join(temp_item['item_set']):temp_rules})
-	# print "\n"
 
 print "====> step 3"
 # menghitung nilai apriori
