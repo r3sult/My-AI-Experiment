@@ -148,10 +148,10 @@ cluster_attribute = []
 data_cluster = []
 centroid = []
 headers = []
-cluster = 5
+cluster = 10
 
 # membaca file yang akan dilakukan pemrosesan clustering
-files = open('data/quake.txt', 'r')
+files = open('data/house16.txt', 'r')
 
 for line in files:
     if line.find('@attribute') == 0:

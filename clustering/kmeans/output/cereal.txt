@@ -1,0 +1,119 @@
+['calories', 'protein', 'fat', 'sodium', 'dietary_fiber', 'carbohydrates', 'sugar', 'x']
+['name', 'calories', 'protein', 'fat', 'sodium', 'dietary_fiber', 'carbohydrates', 'sugar', 'x']
+[{'name': '100_percent_bran', 'sodium': 130.0, 'carbohydrates': 5.0, 'calories': 70.0, 'fat': 1.0, 'sugar': 6.0, 'cluster': 'c0', 'dietary_fiber': 10.0, 'x': 280.0, 'protein': 4.0}, {'name': '100_percent_natural_bran', 'sodium': 15.0, 'carbohydrates': 8.0, 'calories': 120.0, 'fat': 5.0, 'sugar': 8.0, 'cluster': 'c1', 'dietary_fiber': 2.0, 'x': 135.0, 'protein': 3.0}, {'name': 'all-bran', 'sodium': 260.0, 'carbohydrates': 7.0, 'calories': 70.0, 'fat': 1.0, 'sugar': 5.0, 'cluster': 'c2', 'dietary_fiber': 9.0, 'x': 320.0, 'protein': 4.0}, {'name': 'all-bran_with_extra_fiber', 'sodium': 140.0, 'carbohydrates': 8.0, 'calories': 50.0, 'fat': 0.0, 'sugar': 0.0, 'cluster': 'c3', 'dietary_fiber': 14.0, 'x': 330.0, 'protein': 4.0}, {'name': 'almond_delight', 'sodium': 200.0, 'carbohydrates': 14.0, 'calories': 110.0, 'fat': 2.0, 'sugar': 8.0, 'cluster': 'c4', 'dietary_fiber': 1.0, 'x': -1.0, 'protein': 2.0}]
+
+====== PENENTUAN CENTROID =====
+
+new centroid:  [{'sodium': 173.75, 'carbohydrates': 12.0, 'calories': 115.0, 'fat': 1.5, 'sugar': 9.875, 'cluster': 'c0', 'dietary_fiber': 5.25, 'x': 216.25, 'protein': 3.25}, {'sodium': 46.31578947368421, 'carbohydrates': 12.973684210526315, 'calories': 100.0, 'fat': 1.105263157894737, 'sugar': 5.7894736842105265, 'cluster': 'c1', 'dietary_fiber': 2.115789473684211, 'x': 102.10526315789474, 'protein': 2.789473684210526}, {'sodium': 250.0, 'carbohydrates': 10.5, 'calories': 95.0, 'fat': 0.5, 'sugar': 8.5, 'cluster': 'c2', 'dietary_fiber': 7.0, 'x': 255.0, 'protein': 3.5}, {'sodium': 140.0, 'carbohydrates': 8.0, 'calories': 50.0, 'fat': 0.0, 'sugar': 0.0, 'cluster': 'c3', 'dietary_fiber': 14.0, 'x': 330.0, 'protein': 4.0}, {'sodium': 199.68085106382978, 'carbohydrates': 16.01063829787234, 'calories': 110.0, 'fat': 0.9361702127659575, 'sugar': 6.957446808510638, 'cluster': 'c4', 'dietary_fiber': 1.1808510638297873, 'x': 61.4468085106383, 'protein': 2.25531914893617}]
+4
+new centroid:  [{'sodium': 172.22222222222223, 'carbohydrates': 13.166666666666666, 'calories': 123.33333333333333, 'fat': 1.6666666666666667, 'sugar': 10.444444444444445, 'cluster': 'c0', 'dietary_fiber': 4.166666666666667, 'x': 194.44444444444446, 'protein': 3.111111111111111}, {'sodium': 28.529411764705884, 'carbohydrates': 13.411764705882353, 'calories': 97.05882352941177, 'fat': 0.8823529411764706, 'sugar': 5.0, 'cluster': 'c1', 'dietary_fiber': 1.9235294117647062, 'x': 84.05882352941177, 'protein': 2.6470588235294117}, {'sodium': 250.0, 'carbohydrates': 10.5, 'calories': 95.0, 'fat': 0.5, 'sugar': 8.5, 'cluster': 'c2', 'dietary_fiber': 7.0, 'x': 255.0, 'protein': 3.5}, {'sodium': 135.0, 'carbohydrates': 6.5, 'calories': 60.0, 'fat': 0.5, 'sugar': 3.0, 'cluster': 'c3', 'dietary_fiber': 12.0, 'x': 305.0, 'protein': 4.0}, {'sodium': 201.91489361702128, 'carbohydrates': 15.819148936170214, 'calories': 109.7872340425532, 'fat': 0.9787234042553191, 'sugar': 7.042553191489362, 'cluster': 'c4', 'dietary_fiber': 1.2234042553191489, 'x': 65.93617021276596, 'protein': 2.297872340425532}]
+4
+new centroid:  [{'sodium': 163.88888888888889, 'carbohydrates': 13.722222222222221, 'calories': 126.66666666666667, 'fat': 1.7777777777777777, 'sugar': 10.11111111111111, 'cluster': 'c0', 'dietary_fiber': 3.8333333333333335, 'x': 178.88888888888889, 'protein': 3.2222222222222223}, {'sodium': 24.375, 'carbohydrates': 13.25, 'calories': 93.75, 'fat': 0.75, 'sugar': 4.625, 'cluster': 'c1', 'dietary_fiber': 1.85625, 'x': 78.6875, 'protein': 2.5625}, {'sodium': 223.33333333333334, 'carbohydrates': 10.666666666666666, 'calories': 103.33333333333333, 'fat': 1.0, 'sugar': 10.333333333333334, 'cluster': 'c2', 'dietary_fiber': 6.666666666666667, 'x': 273.3333333333333, 'protein': 3.3333333333333335}, {'sodium': 135.0, 'carbohydrates': 6.5, 'calories': 60.0, 'fat': 0.5, 'sugar': 3.0, 'cluster': 'c3', 'dietary_fiber': 12.0, 'x': 305.0, 'protein': 4.0}, {'sodium': 201.91489361702128, 'carbohydrates': 15.819148936170214, 'calories': 109.7872340425532, 'fat': 0.9787234042553191, 'sugar': 7.042553191489362, 'cluster': 'c4', 'dietary_fiber': 1.2234042553191489, 'x': 65.93617021276596, 'protein': 2.297872340425532}]
+3
+new centroid:  [{'sodium': 160.0, 'carbohydrates': 13.5, 'calories': 122.5, 'fat': 1.6666666666666667, 'sugar': 9.75, 'cluster': 'c0', 'dietary_fiber': 3.3333333333333335, 'x': 163.33333333333334, 'protein': 3.1666666666666665}, {'sodium': 24.375, 'carbohydrates': 13.25, 'calories': 93.75, 'fat': 0.75, 'sugar': 4.625, 'cluster': 'c1', 'dietary_fiber': 1.85625, 'x': 78.6875, 'protein': 2.5625}, {'sodium': 223.33333333333334, 'carbohydrates': 10.666666666666666, 'calories': 103.33333333333333, 'fat': 1.0, 'sugar': 10.333333333333334, 'cluster': 'c2', 'dietary_fiber': 6.666666666666667, 'x': 273.3333333333333, 'protein': 3.3333333333333335}, {'sodium': 135.0, 'carbohydrates': 6.5, 'calories': 60.0, 'fat': 0.5, 'sugar': 3.0, 'cluster': 'c3', 'dietary_fiber': 12.0, 'x': 305.0, 'protein': 4.0}, {'sodium': 205.5681818181818, 'carbohydrates': 16.022727272727273, 'calories': 109.77272727272727, 'fat': 0.9545454545454546, 'sugar': 6.931818181818182, 'cluster': 'c4', 'dietary_fiber': 1.1818181818181819, 'x': 62.47727272727273, 'protein': 2.25}]
+2
+new centroid:  [{'sodium': 163.57142857142858, 'carbohydrates': 14.0, 'calories': 119.28571428571429, 'fat': 1.7142857142857142, 'sugar': 8.785714285714286, 'cluster': 'c0', 'dietary_fiber': 3.2142857142857144, 'x': 149.28571428571428, 'protein': 3.0714285714285716}, {'sodium': 24.375, 'carbohydrates': 13.25, 'calories': 93.75, 'fat': 0.75, 'sugar': 4.625, 'cluster': 'c1', 'dietary_fiber': 1.85625, 'x': 78.6875, 'protein': 2.5625}, {'sodium': 215.0, 'carbohydrates': 11.75, 'calories': 112.5, 'fat': 1.0, 'sugar': 11.25, 'cluster': 'c2', 'dietary_fiber': 6.0, 'x': 262.5, 'protein': 3.25}, {'sodium': 135.0, 'carbohydrates': 6.5, 'calories': 60.0, 'fat': 0.5, 'sugar': 3.0, 'cluster': 'c3', 'dietary_fiber': 12.0, 'x': 305.0, 'protein': 4.0}, {'sodium': 206.9512195121951, 'carbohydrates': 16.0, 'calories': 109.51219512195122, 'fat': 0.9024390243902439, 'sugar': 6.951219512195122, 'cluster': 'c4', 'dietary_fiber': 1.048780487804878, 'x': 58.26829268292683, 'protein': 2.2195121951219514}]
+3
+new centroid:  [{'sodium': 156.875, 'carbohydrates': 14.3125, 'calories': 118.125, 'fat': 1.75, 'sugar': 8.1875, 'cluster': 'c0', 'dietary_fiber': 2.9375, 'x': 135.9375, 'protein': 3.125}, {'sodium': 24.375, 'carbohydrates': 13.25, 'calories': 93.75, 'fat': 0.75, 'sugar': 4.625, 'cluster': 'c1', 'dietary_fiber': 1.85625, 'x': 78.6875, 'protein': 2.5625}, {'sodium': 220.0, 'carbohydrates': 12.2, 'calories': 114.0, 'fat': 0.8, 'sugar': 11.4, 'cluster': 'c2', 'dietary_fiber': 5.8, 'x': 248.0, 'protein': 3.2}, {'sodium': 135.0, 'carbohydrates': 6.5, 'calories': 60.0, 'fat': 0.5, 'sugar': 3.0, 'cluster': 'c3', 'dietary_fiber': 12.0, 'x': 305.0, 'protein': 4.0}, {'sodium': 211.18421052631578, 'carbohydrates': 16.026315789473685, 'calories': 109.21052631578948, 'fat': 0.868421052631579, 'sugar': 6.973684210526316, 'cluster': 'c4', 'dietary_fiber': 0.9473684210526315, 'x': 55.63157894736842, 'protein': 2.1315789473684212}]
+3
+new centroid:  [{'sodium': 160.0, 'carbohydrates': 14.947368421052632, 'calories': 115.78947368421052, 'fat': 1.5789473684210527, 'sugar': 7.2105263157894735, 'cluster': 'c0', 'dietary_fiber': 2.8421052631578947, 'x': 125.52631578947368, 'protein': 3.1052631578947367}, {'sodium': 24.375, 'carbohydrates': 13.25, 'calories': 93.75, 'fat': 0.75, 'sugar': 4.625, 'cluster': 'c1', 'dietary_fiber': 1.85625, 'x': 78.6875, 'protein': 2.5625}, {'sodium': 218.33333333333334, 'carbohydrates': 12.333333333333334, 'calories': 110.0, 'fat': 0.6666666666666666, 'sugar': 10.333333333333334, 'cluster': 'c2', 'dietary_fiber': 5.666666666666667, 'x': 238.33333333333334, 'protein': 3.1666666666666665}, {'sodium': 135.0, 'carbohydrates': 6.5, 'calories': 60.0, 'fat': 0.5, 'sugar': 3.0, 'cluster': 'c3', 'dietary_fiber': 12.0, 'x': 305.0, 'protein': 4.0}, {'sodium': 214.26470588235293, 'carbohydrates': 15.911764705882353, 'calories': 110.29411764705883, 'fat': 0.9117647058823529, 'sugar': 7.470588235294118, 'cluster': 'c4', 'dietary_fiber': 0.7058823529411765, 'x': 50.411764705882355, 'protein': 2.0294117647058822}]
+3
+new centroid:  [{'sodium': 160.0, 'carbohydrates': 15.11111111111111, 'calories': 115.55555555555556, 'fat': 1.5555555555555556, 'sugar': 7.055555555555555, 'cluster': 'c0', 'dietary_fiber': 2.7222222222222223, 'x': 121.38888888888889, 'protein': 3.111111111111111}, {'sodium': 24.375, 'carbohydrates': 13.25, 'calories': 93.75, 'fat': 0.75, 'sugar': 4.625, 'cluster': 'c1', 'dietary_fiber': 1.85625, 'x': 78.6875, 'protein': 2.5625}, {'sodium': 210.0, 'carbohydrates': 12.285714285714286, 'calories': 111.42857142857143, 'fat': 0.8571428571428571, 'sugar': 10.285714285714286, 'cluster': 'c2', 'dietary_fiber': 5.571428571428571, 'x': 232.85714285714286, 'protein': 3.142857142857143}, {'sodium': 135.0, 'carbohydrates': 6.5, 'calories': 60.0, 'fat': 0.5, 'sugar': 3.0, 'cluster': 'c3', 'dietary_fiber': 12.0, 'x': 305.0, 'protein': 4.0}, {'sodium': 214.26470588235293, 'carbohydrates': 15.911764705882353, 'calories': 110.29411764705883, 'fat': 0.9117647058823529, 'sugar': 7.470588235294118, 'cluster': 'c4', 'dietary_fiber': 0.7058823529411765, 'x': 50.411764705882355, 'protein': 2.0294117647058822}]
+2
+new centroid:  [{'sodium': 160.0, 'carbohydrates': 15.11111111111111, 'calories': 115.55555555555556, 'fat': 1.5555555555555556, 'sugar': 7.055555555555555, 'cluster': 'c0', 'dietary_fiber': 2.7222222222222223, 'x': 121.38888888888889, 'protein': 3.111111111111111}, {'sodium': 24.375, 'carbohydrates': 13.25, 'calories': 93.75, 'fat': 0.75, 'sugar': 4.625, 'cluster': 'c1', 'dietary_fiber': 1.85625, 'x': 78.6875, 'protein': 2.5625}, {'sodium': 210.0, 'carbohydrates': 12.285714285714286, 'calories': 111.42857142857143, 'fat': 0.8571428571428571, 'sugar': 10.285714285714286, 'cluster': 'c2', 'dietary_fiber': 5.571428571428571, 'x': 232.85714285714286, 'protein': 3.142857142857143}, {'sodium': 135.0, 'carbohydrates': 6.5, 'calories': 60.0, 'fat': 0.5, 'sugar': 3.0, 'cluster': 'c3', 'dietary_fiber': 12.0, 'x': 305.0, 'protein': 4.0}, {'sodium': 214.26470588235293, 'carbohydrates': 15.911764705882353, 'calories': 110.29411764705883, 'fat': 0.9117647058823529, 'sugar': 7.470588235294118, 'cluster': 'c4', 'dietary_fiber': 0.7058823529411765, 'x': 50.411764705882355, 'protein': 2.0294117647058822}]
+0
+
+====== CLUSTER BARU =====
+
+
+====>  C0 
+
+bran_chex 	90.0 	2.0 	1.0 	200.0 	4.0 	15.0 	6.0 	125.0 	c0
+clusters 	110.0 	3.0 	2.0 	140.0 	2.0 	13.0 	7.0 	105.0 	c0
+cracklin'_oat_bran 	110.0 	3.0 	3.0 	140.0 	4.0 	10.0 	7.0 	160.0 	c0
+crispy_wheat_and_raisins 	100.0 	2.0 	1.0 	140.0 	2.0 	11.0 	10.0 	120.0 	c0
+grape_nuts_flakes 	100.0 	3.0 	1.0 	140.0 	3.0 	15.0 	5.0 	85.0 	c0
+grape-nuts 	110.0 	3.0 	0.0 	170.0 	3.0 	17.0 	3.0 	90.0 	c0
+just_right_fruit_and_nut 	140.0 	3.0 	1.0 	170.0 	2.0 	20.0 	9.0 	95.0 	c0
+life 	100.0 	4.0 	2.0 	150.0 	2.0 	12.0 	6.0 	95.0 	c0
+muesli_raisins_and_almonds 	150.0 	4.0 	3.0 	95.0 	3.0 	16.0 	11.0 	170.0 	c0
+muesli_peaches_and_pecans 	150.0 	4.0 	3.0 	150.0 	3.0 	16.0 	11.0 	170.0 	c0
+mueslix_crispy_blend 	160.0 	3.0 	2.0 	150.0 	3.0 	17.0 	13.0 	160.0 	c0
+nutri-grain_almond-raisin 	140.0 	3.0 	2.0 	220.0 	3.0 	21.0 	7.0 	130.0 	c0
+nutri-grain_wheat 	90.0 	3.0 	0.0 	170.0 	3.0 	18.0 	2.0 	90.0 	c0
+oatmeal_raisin_crisp 	130.0 	3.0 	2.0 	170.0 	1.5 	13.5 	10.0 	120.0 	c0
+quaker_oat_squares 	100.0 	4.0 	1.0 	135.0 	2.0 	14.0 	6.0 	110.0 	c0
+raisin_nut_bran 	100.0 	3.0 	2.0 	140.0 	2.5 	10.5 	8.0 	140.0 	c0
+total_whole_grain 	100.0 	3.0 	1.0 	200.0 	3.0 	16.0 	3.0 	110.0 	c0
+wheaties 	100.0 	3.0 	1.0 	200.0 	3.0 	17.0 	3.0 	110.0 	c0
+
+====>  C1 
+
+100_percent_natural_bran 	120.0 	3.0 	5.0 	15.0 	2.0 	8.0 	8.0 	135.0 	c1
+corn_pops 	110.0 	1.0 	0.0 	90.0 	1.0 	13.0 	12.0 	20.0 	c1
+cream_of_wheat_(quick) 	100.0 	3.0 	0.0 	80.0 	1.0 	21.0 	0.0 	-1.0 	c1
+frosted_mini-wheats 	100.0 	3.0 	0.0 	0.0 	3.0 	14.0 	7.0 	100.0 	c1
+golden_crisp 	100.0 	2.0 	0.0 	45.0 	0.0 	11.0 	15.0 	40.0 	c1
+great_grains_pecan 	120.0 	3.0 	3.0 	75.0 	3.0 	13.0 	4.0 	100.0 	c1
+maypo 	100.0 	4.0 	1.0 	0.0 	0.0 	16.0 	3.0 	95.0 	c1
+puffed_rice 	50.0 	1.0 	0.0 	0.0 	0.0 	13.0 	0.0 	15.0 	c1
+puffed_wheat 	50.0 	2.0 	0.0 	0.0 	1.0 	10.0 	0.0 	50.0 	c1
+quaker_oatmeal 	100.0 	5.0 	2.0 	0.0 	2.7 	-1.0 	-1.0 	110.0 	c1
+raisin_squares 	90.0 	2.0 	0.0 	0.0 	2.0 	15.0 	6.0 	110.0 	c1
+shredded_wheat 	80.0 	2.0 	0.0 	0.0 	3.0 	16.0 	0.0 	95.0 	c1
+shredded_wheat_n_bran 	90.0 	3.0 	0.0 	0.0 	4.0 	19.0 	0.0 	140.0 	c1
+shredded_wheat_spoon_size 	90.0 	3.0 	0.0 	0.0 	3.0 	20.0 	0.0 	120.0 	c1
+smacks 	110.0 	2.0 	1.0 	70.0 	1.0 	9.0 	15.0 	40.0 	c1
+strawberry_fruit_wheats 	90.0 	2.0 	0.0 	15.0 	3.0 	15.0 	5.0 	90.0 	c1
+
+====>  C2 
+
+all-bran 	70.0 	4.0 	1.0 	260.0 	9.0 	7.0 	5.0 	320.0 	c2
+bran_flakes 	90.0 	3.0 	0.0 	210.0 	5.0 	13.0 	5.0 	190.0 	c2
+fruit_and_fibre 	120.0 	3.0 	2.0 	160.0 	5.0 	12.0 	10.0 	200.0 	c2
+fruitful_bran 	120.0 	3.0 	0.0 	240.0 	5.0 	14.0 	12.0 	190.0 	c2
+post_nat._raisin_bran 	120.0 	3.0 	1.0 	200.0 	6.0 	11.0 	14.0 	260.0 	c2
+raisin_bran 	120.0 	3.0 	1.0 	210.0 	5.0 	14.0 	12.0 	240.0 	c2
+total_raisin_bran 	140.0 	3.0 	1.0 	190.0 	4.0 	15.0 	14.0 	230.0 	c2
+
+====>  C3 
+
+100_percent_bran 	70.0 	4.0 	1.0 	130.0 	10.0 	5.0 	6.0 	280.0 	c3
+all-bran_with_extra_fiber 	50.0 	4.0 	0.0 	140.0 	14.0 	8.0 	0.0 	330.0 	c3
+
+====>  C4 
+
+almond_delight 	110.0 	2.0 	2.0 	200.0 	1.0 	14.0 	8.0 	-1.0 	c4
+apple_cinnamon_cheerios 	110.0 	2.0 	2.0 	180.0 	1.5 	10.5 	10.0 	70.0 	c4
+apple_jacks 	110.0 	2.0 	0.0 	125.0 	1.0 	11.0 	14.0 	30.0 	c4
+basic_4 	130.0 	3.0 	2.0 	210.0 	2.0 	18.0 	8.0 	100.0 	c4
+cap'n'crunch 	120.0 	1.0 	2.0 	220.0 	0.0 	12.0 	12.0 	35.0 	c4
+cheerios 	110.0 	6.0 	2.0 	290.0 	2.0 	17.0 	1.0 	105.0 	c4
+cinnamon_toast_crunch 	120.0 	1.0 	3.0 	210.0 	0.0 	13.0 	9.0 	45.0 	c4
+cocoa_puffs 	110.0 	1.0 	1.0 	180.0 	0.0 	12.0 	13.0 	55.0 	c4
+corn_chex 	110.0 	2.0 	0.0 	280.0 	0.0 	22.0 	3.0 	25.0 	c4
+corn_flakes 	100.0 	2.0 	0.0 	290.0 	1.0 	21.0 	2.0 	35.0 	c4
+count_chocula 	110.0 	1.0 	1.0 	180.0 	0.0 	12.0 	13.0 	65.0 	c4
+crispix 	110.0 	2.0 	0.0 	220.0 	1.0 	21.0 	3.0 	30.0 	c4
+double_chex 	100.0 	2.0 	0.0 	190.0 	1.0 	18.0 	5.0 	80.0 	c4
+froot_loops 	110.0 	2.0 	1.0 	125.0 	1.0 	11.0 	13.0 	30.0 	c4
+frosted_flakes 	110.0 	1.0 	0.0 	200.0 	1.0 	14.0 	11.0 	25.0 	c4
+fruity_pebbles 	110.0 	1.0 	1.0 	135.0 	0.0 	13.0 	12.0 	25.0 	c4
+golden_grahams 	110.0 	1.0 	1.0 	280.0 	0.0 	15.0 	9.0 	45.0 	c4
+honey_graham_ohs 	120.0 	1.0 	2.0 	220.0 	1.0 	12.0 	11.0 	45.0 	c4
+honey_nut_cheerios 	110.0 	3.0 	1.0 	250.0 	1.5 	11.5 	10.0 	90.0 	c4
+honey-comb 	110.0 	1.0 	0.0 	180.0 	0.0 	14.0 	11.0 	35.0 	c4
+just_right_crunchy__nuggets 	110.0 	2.0 	1.0 	170.0 	1.0 	17.0 	6.0 	60.0 	c4
+kix 	110.0 	2.0 	1.0 	260.0 	0.0 	21.0 	3.0 	40.0 	c4
+lucky_charms 	110.0 	2.0 	1.0 	180.0 	0.0 	12.0 	12.0 	55.0 	c4
+multi-grain_cheerios 	100.0 	2.0 	1.0 	220.0 	2.0 	15.0 	6.0 	90.0 	c4
+nutandhoney_crunch 	120.0 	2.0 	1.0 	190.0 	0.0 	15.0 	9.0 	40.0 	c4
+product_19 	100.0 	3.0 	0.0 	320.0 	1.0 	20.0 	3.0 	45.0 	c4
+rice_chex 	110.0 	1.0 	0.0 	240.0 	0.0 	23.0 	2.0 	30.0 	c4
+rice_krispies 	110.0 	2.0 	0.0 	290.0 	0.0 	22.0 	3.0 	35.0 	c4
+special_k 	110.0 	6.0 	0.0 	230.0 	1.0 	16.0 	3.0 	55.0 	c4
+total_corn_flakes 	110.0 	2.0 	1.0 	200.0 	0.0 	21.0 	3.0 	35.0 	c4
+triples 	110.0 	2.0 	1.0 	250.0 	0.0 	21.0 	3.0 	60.0 	c4
+trix 	110.0 	1.0 	1.0 	140.0 	0.0 	13.0 	12.0 	25.0 	c4
+wheat_chex 	100.0 	3.0 	1.0 	230.0 	3.0 	17.0 	3.0 	115.0 	c4
+wheaties_honey_gold 	110.0 	2.0 	1.0 	200.0 	1.0 	16.0 	8.0 	60.0 	c4
